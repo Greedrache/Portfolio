@@ -1,0 +1,25 @@
+header {
+    background-color: #89bcd9;
+    height: 80px;
+    font-family: 'Josefin Sans', sans-serif;
+    margin-top: 0;
+
+    nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+
+        a {
+            color: #262e34;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            font-weight: bold;
+
+            &:hover {
+                color: white;
+            }
+        }
+    }
+}
