@@ -1,0 +1,12 @@
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 150px;
+    margin-right: 150px;
+    flex-direction: row;
+
+    div{
+        width: 50%;
+    }
+}

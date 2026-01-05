@@ -1,11 +1,40 @@
 footer {
     background-color: #89bcd9;
     width: 100%;
-    height: 60px;
+    height: 200px;
     bottom: 0;
     font-family: 'Josefin Sans', sans-serif;
     display: flex;
-    justify-content: center;
-    align-items: center;
     color: #262e34;
+    margin-top: 64px;
+   
+
+    div {
+        margin: auto;
+        text-align: center;
+    }
+
+    a{
+        color: #262e34;
+        text-decoration: none;
+
+        &:hover {
+            color: white;
+        }
+    }
 }
+
+.fistdiv{
+   display: flex;
+   text-align: left;
+   flex-direction: column;
+}
+
+.footerlinks {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+
+

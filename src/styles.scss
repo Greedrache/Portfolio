@@ -1,21 +1,41 @@
-body{
-    margin:0;
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 3px;
+    transition: background 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+body {
+    margin: 0;
     background-color: #262e34;
     font-family: 'Josefin Sans', sans-serif;
     color: white;
 }
 
-h2{
+h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 36px;
+    font-size: 60px;
+    font-weight: 400;
     color: #89bcd9;
     font-family: 'Anta', sans-serif;
+    margin-top: 80px;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 @font-face {

@@ -3,12 +3,21 @@ header {
     height: 80px;
     font-family: 'Josefin Sans', sans-serif;
     margin-top: 0;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+
+    .smalllogo {
+        font-size: 14px;
+    }
 
     nav {
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
         height: 100%;
+        margin-left: 100px;
+        margin-right: 100px;
 
         a {
             color: #262e34;

@@ -1,0 +1,19 @@
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 150px;
+    margin-right: 150px;
+    flex-direction: row;
+
+    div {
+        width: 50%;
+        
+    }
+}
+
+.my-location {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
