@@ -7,6 +7,37 @@ header {
     top: 0;
     z-index: 1000;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    box-sizing: border-box;
+
+    .logo-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
+
+        img {
+            height: auto;
+            width: 40px;
+        }
+
+        p {
+            margin: 0;
+            line-height: 1.1;
+            color: #262e34;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .developer {
+            color:  #262e34!important;
+            font-size: 10px;
+            font-weight: normal;
+        }
+    }
 
     .smalllogo {
         font-size: 14px;
@@ -16,19 +47,37 @@ header {
         display: flex;
         justify-content: space-around;
         align-items: center;
-        height: 100%;
-        margin-left: 100px;
-        margin-right: 100px;
+        width: 70%;
+        gap: 20px;
 
         a {
             color: #262e34;
             text-decoration: none;
-            margin: 0 15px;
             font-size: 18px;
             font-weight: bold;
 
             &:hover {
                 color: white;
+            }
+        }
+    }
+
+    .buttons-section {
+        display: flex;
+        gap: 10px;
+
+        button {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Josefin Sans', sans-serif;
+            font-weight: bold;
+            background-color: #262e34;
+            color: white;
+
+            &:hover {
+                background-color: #3f4b54;
             }
         }
     }

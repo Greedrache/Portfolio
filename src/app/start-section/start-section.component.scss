@@ -57,3 +57,36 @@ section {
     flex-direction: row;
     justify-content: center;
 }
+
+.logo-social-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+}
+
+.logo-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-icons {
+    position: absolute;
+    right:120px;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px;
+    margin-bottom: 40px;
+
+    a {
+        display: block;
+
+        img {
+            width: 20px;
+            height: auto;
+        }
+    }
+}
