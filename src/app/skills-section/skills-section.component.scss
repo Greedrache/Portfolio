@@ -19,11 +19,12 @@ section {
     color: #89bcd9;
     text-align: center;
     justify-content: center;
+    font-size: 12px;
 
     img {
-        width: 48px;
-        height: 48px;
-        margin-bottom: 10px;
+        width: 36px;
+        height: 36px;
+        margin-bottom: 5px;
     }
 }
 
@@ -37,13 +38,12 @@ section {
 .skill-direction {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 20px;
 
-    >div {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        gap: 24px;
+    .skills-row {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
         width: 100%;
     }
 }
@@ -80,5 +80,67 @@ section {
         background-color: #2d383f;
         border-radius: 50%;
         z-index: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        flex-direction: column;
+        margin-left: 20px;
+        margin-right: 20px;
+
+        div {
+            width: 100%;
+        }
+    }
+
+    .skill-direction {
+        .skills-row {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+    }
+
+    .learning-skills {
+        padding: 30px 20px;
+
+        &::before {
+            width: 300px;
+            height: 300px;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    section {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .skill-direction {
+        .skills-row {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+        }
+    }
+
+    .skills {
+        font-size: 10px;
+
+        img {
+            width: 28px;
+            height: 28px;
+        }
+    }
+
+    .learning-skills {
+        &::before {
+            width: 280px;
+            height: 280px;
+        }
+    }
+
+    .motivationtxt {
+        max-width: 250px;
     }
 }

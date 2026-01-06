@@ -37,3 +37,31 @@ nav {
         background-color: #3f4b54;
     }
 }
+
+@media (max-width: 768px) {
+    section {
+        flex-direction: column;
+        margin-left: 20px;
+        margin-right: 20px;
+        text-align: center;
+
+        div {
+            width: 100%;
+        }
+    }
+
+    .my-location {
+        justify-content: center;
+    }
+
+    nav {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    section {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+}

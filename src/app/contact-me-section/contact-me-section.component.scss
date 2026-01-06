@@ -29,8 +29,10 @@
     gap: 16px;
     flex-direction: column;
     margin-top: 20px;
-    margin-left: 150px;
-    margin-right: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+    padding: 0 20px;
 
     p {
         font-size: 12px;
@@ -47,6 +49,7 @@
         border: 1px solid #89bcd9;
         background-color: transparent;
         font-family: 'Josefin Sans', sans-serif;
+        box-sizing: border-box;
 
         &:focus {
             background-color: #3f4b54;
@@ -85,4 +88,47 @@
         text-decoration: none;
     }
 
+}
+
+@media (max-width: 768px) {
+    .infos {
+        flex-direction: column;
+        margin-left: 20px;
+        margin-right: 20px;
+        text-align: center;
+
+        div {
+            width: 100%;
+        }
+    }
+
+    .input-section {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .smallinputs {
+        flex-direction: column;
+        gap: 16px;
+
+        nav {
+            width: 100%;
+        }
+    }
+
+    .icons {
+        margin-left: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .infos {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .input-section {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
 }

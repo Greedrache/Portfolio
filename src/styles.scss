@@ -21,6 +21,7 @@ body {
     background-color: #262e34;
     font-family: 'Josefin Sans', sans-serif;
     color: white;
+    overflow-x: hidden;
 }
 
 h2 {
@@ -44,4 +45,20 @@ html {
 @font-face {
     font-family: 'Anta';
     src: url('/assets/fonts/Anta-Regular.ttf') format('truetype');
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 40px;
+        margin-top: 60px;
+        padding: 0 20px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 32px;
+        margin-top: 40px;
+    }
 }

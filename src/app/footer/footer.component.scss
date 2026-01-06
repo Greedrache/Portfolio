@@ -38,4 +38,30 @@ footer {
     gap: 24px;
 }
 
+@media (max-width: 768px) {
+    footer {
+        height: auto;
+        padding: 30px 20px;
+        flex-direction: column;
+    }
 
+    .fistdiv {
+        align-items: center;
+        text-align: center;
+    }
+
+    .footerlinks {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        padding: 20px 15px;
+    }
+
+    .footerlinks {
+        gap: 10px;
+    }
+}
