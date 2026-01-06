@@ -24,6 +24,8 @@ export class MyProjectsSectionComponent {
         { name: 'Git', img: 'assets/img/git.png' }
       ],
       description: 'Join is a web app that lets you sign up and create tasks. You can manage your tasks by "To Do," "In Progress," and "Done," set priorities, and enter deadlines. You can also add contacts to stay organized together.',
+      learned: 'In this team project, I gained experience working collaboratively with others. I learned how to structure tasks, communicate effectively within a team, and use Git in a shared workflow.',
+      how_clean_code: 'I kept the code clean by structuring the project into clear, reusable components and modules. Files, variables, and classes are named consistently and descriptively, and the code is commented where necessary to improve readability and teamwork.',
       githubLink: '',
       img: 'assets/img/join.jpg'
     },
@@ -37,6 +39,8 @@ export class MyProjectsSectionComponent {
         { name: 'Git', img: 'assets/img/git.png' }
       ],
       description: 'El Pollo Loco is a fun jump-and-run game where you jump on chickens and overcome obstacles. At the end of each round, a giant boss chicken awaits that you must defeat. Speed, timing, and a little strategy are the keys to victory.',
+      learned: 'Through this project, I learned how JavaScript classes and modules work together to build structured applications. I also gained a better understanding of game logic and clean code organization.',
+      how_clean_code: 'I structured the code using JavaScript classes and modules to keep responsibilities separated. Clear naming conventions and logical file structure helped keep the code easy to understand and maintain as the project grew.',
       githubLink: 'https://github.com/Greedrache/EL-POLLO-LOCO',
       img: 'assets/img/elpolloloco.jpg'
     },
@@ -51,6 +55,8 @@ export class MyProjectsSectionComponent {
         { name: 'Firebase', img: 'assets/img/firebase.png' }
       ],
       description: 'Pokedex is an interactive website that introduces all Pokémon and loads their information via an API. Here you can discover the characteristics, types, and abilities of each Pokémon. Perfect for expanding your Pokémon knowledge and learning new things about the world of pocket monsters.',
+      learned: 'In this project, I learned how to work with APIs and handle asynchronous data. It also helped me understand how to use frameworks and structure applications more efficiently.',
+      how_clean_code: 'The project is structured into reusable components with a clear separation of concerns. Clean naming conventions, readable code, and comments where needed make the project easy to maintain and extend. ',
       githubLink: 'https://github.com/Greedrache/Pokedex',
       img: 'assets/img/pokedex.jpg'
     }
