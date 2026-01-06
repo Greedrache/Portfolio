@@ -1,0 +1,34 @@
+.project-nav {
+  display: flex;
+  gap: 1rem;
+
+  .button-design{
+    color: #89bcd9;
+  }
+
+  button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    opacity: 0.5;
+    font-size: 24px;
+
+    &.active {
+      opacity: 1;
+      color: white;
+    }
+
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+.project-details {
+  margin-top: 2rem;
+}
+
+.projects-section{
+    margin-left: 150px;
+    margin-right: 150px;
+}

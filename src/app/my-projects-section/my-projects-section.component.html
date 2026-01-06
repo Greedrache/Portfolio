@@ -1,1 +1,33 @@
 <h2>My Projects</h2>
+<div class="projects-section">
+
+  <!-- Projekt-Navigation -->
+  <div class="project-nav">
+    <button class="button-design"
+      *ngFor="let project of projects; let i = index"
+      (click)="activeProjectIndex = i"
+      [class.active]="activeProjectIndex === i"
+    >
+      {{ project.title }}
+    </button>
+  </div>
+
+  <!-- Projekt-Details -->
+  <div class="project-details" *ngIf="projects[activeProjectIndex]">
+    <h2>{{ projects[activeProjectIndex].title }}</h2>
+    <p><strong>Tech Stack:</strong> {{ projects[activeProjectIndex].tech }}</p>
+    <p>{{ projects[activeProjectIndex].description }}</p>
+
+    <div class="project-links">
+      <ng-container *ngIf="projects[activeProjectIndex].githubLink">
+        <a [href]="projects[activeProjectIndex].githubLink" target="_blank">
+          GitHub
+        </a>
+      </ng-container>
+      <a href="#" target="_blank">
+        Demo testen
+      </a>
+    </div>
+  </div>
+
+</div>
