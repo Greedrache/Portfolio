@@ -14,26 +14,30 @@
 </section>
 
 <section class="input-section">
+  <form action="https://formspree.io/f/xkogdnvj" method="POST">
     <div class="smallinputs">
-        <nav>
-            <p>Your name</p>
-            <input type="text">
-        </nav>
+      <nav>
+        <p>Your name</p>
+        <input type="text" name="name">
+      </nav>
 
-
-        <nav>
-            <p>Your Email</p>
-            <input type="email">
-        </nav>
+      <nav>
+        <p>Your Email</p>
+        <input type="email" name="email">
+      </nav>
     </div>
 
     <div class="biginput">
-        <nav>
-            <p>Your Message</p>
-            <input type="text">
-            <span>I have read the <a href="#">privacy policy</a> and agree
-                to the processing of my data as outlined.
-            </span>
-        </nav>
+      <nav>
+        <p>Your Message</p>
+        <textarea name="message"></textarea>
+        <span>
+          I have read the <a href="#">privacy policy</a> and agree
+          to the processing of my data as outlined.
+        </span>
+      </nav>
     </div>
+
+    <button type="submit">Send</button>
+  </form>
 </section>
