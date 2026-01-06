@@ -1,4 +1,4 @@
-<h2>My Projects</h2>
+<h2 id="my-projects">My Projects</h2>
 <div class="projects-section">
 
   <!-- Projekt-Navigation -->
@@ -14,19 +14,37 @@
 
   <!-- Projekt-Details -->
   <div class="project-details" *ngIf="projects[activeProjectIndex]">
-    <h2>{{ projects[activeProjectIndex].title }}</h2>
-    <p><strong>Tech Stack:</strong> {{ projects[activeProjectIndex].tech }}</p>
-    <p>{{ projects[activeProjectIndex].description }}</p>
+    <div class="project-content">
+      <div class="project-image">
+        <img [src]="projects[activeProjectIndex].img" [alt]="projects[activeProjectIndex].title">
+      </div>
+      <div class="project-info">
+        <div class="project-header">
+          <h3>{{ projects[activeProjectIndex].title }}</h3>
+          <span class="duration">{{ projects[activeProjectIndex].duration }}</span>
+        </div>
+        <div class="tech-stack">
+          <span>Technologies:</span>
+          <div class="tech-icons">
+            <img *ngFor="let tech of projects[activeProjectIndex].tech" 
+                 [src]="tech.img" 
+                 [alt]="tech.name" 
+                 [title]="tech.name">
+          </div>
+        </div>
+        <p class="description">{{ projects[activeProjectIndex].description }}</p>
 
-    <div class="project-links">
-      <ng-container *ngIf="projects[activeProjectIndex].githubLink">
-        <a [href]="projects[activeProjectIndex].githubLink" target="_blank">
-          GitHub
-        </a>
-      </ng-container>
-      <a href="#" target="_blank">
-        Demo testen
-      </a>
+        <div class="project-links">
+          <ng-container *ngIf="projects[activeProjectIndex].githubLink">
+            <a [href]="projects[activeProjectIndex].githubLink" target="_blank">
+              GitHub
+            </a>
+          </ng-container>
+          <a href="#" target="_blank">
+            Live Test
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 
