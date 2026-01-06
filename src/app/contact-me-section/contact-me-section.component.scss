@@ -4,6 +4,7 @@
     align-items: center;
     margin-left: 150px;
     margin-right: 150px;
+    font-size: 18px;
     flex-direction: row;
 
     div {
@@ -40,7 +41,7 @@
 .smallinputs {
     display: flex;
     flex-direction: row;
-    gap: 16px;
+    gap: 32px;
     width: 100%;
 
     nav {
