@@ -12,8 +12,25 @@
     }
 }
 
-.email-tel-div{
+.email-tel-div {
     margin-bottom: 60px;
+}
+
+button {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 20px;
+    color: #89bcd9;
+    text-decoration: none;
+    border: 1px solid #89bcd9;
+    background-color: transparent;
+    border-radius: 20px;
+    font-family: 'Josefin Sans', sans-serif;
+
+    &:hover {
+        background-color: #3f4b54;
+    }
 }
 
 .icons {
@@ -41,8 +58,11 @@
         margin-left: 16px;
     }
 
-    input {
+    input,
+    textarea {
         padding: 12px;
+        resize: none;
+        overflow: hidden;
         width: 100%;
         color: white;
         border-radius: 20px;
