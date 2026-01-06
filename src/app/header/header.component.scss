@@ -3,8 +3,9 @@ header {
     height: 80px;
     font-family: 'Josefin Sans', sans-serif;
     margin-top: 0;
-    position: relative;
-    z-index: 2;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     width: 100%;
 
     .smalllogo {
