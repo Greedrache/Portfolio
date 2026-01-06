@@ -18,6 +18,11 @@ section {
     gap: 10px;
 }
 
+nav {
+    display: flex;
+    justify-content: flex-end;
+}
+
 .linkhrefs {
     margin-top: 20px;
     display: inline-block;
