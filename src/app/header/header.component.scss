@@ -33,7 +33,7 @@ header {
         }
 
         .developer {
-            color:  #262e34!important;
+            color: #262e34 !important;
             font-size: 10px;
             font-weight: normal;
         }
@@ -85,48 +85,6 @@ header {
 
 @media (max-width: 768px) {
     header {
-        padding: 0 20px;
-        height: auto;
-        min-height: 60px;
-        flex-wrap: wrap;
-        gap: 10px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-
-        .logo-section {
-            order: 1;
-        }
-
-        nav {
-            order: 3;
-            width: 100%;
-            gap: 10px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .buttons-section {
-            order: 2;
-        }
-    }
-}
-
-@media (max-width: 480px) {
-    header {
-        padding: 10px 15px;
-
-        nav {
-            gap: 8px;
-
-            a {
-                font-size: 14px;
-            }
-        }
-
-        .buttons-section {
-            button {
-                padding: 6px 12px;
-            }
-        }
+        display: none;
     }
 }

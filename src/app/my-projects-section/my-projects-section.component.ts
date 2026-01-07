@@ -26,7 +26,7 @@ export class MyProjectsSectionComponent {
       description: 'Join is a web app that lets you sign up and create tasks. You can manage your tasks by "To Do," "In Progress," and "Done," set priorities, and enter deadlines. You can also add contacts to stay organized together.',
       learned: 'In this team project, I gained experience working collaboratively with others. I learned how to structure tasks, communicate effectively within a team, and use Git in a shared workflow.',
       how_clean_code: 'I kept the code clean by structuring the project into reusable components, using clear naming conventions, and adding comments where necessary to support teamwork.',
-      githubLink: '',
+      githubLink: 'https://github.com/Greedrache/Join',
       img: 'assets/img/join.jpg'
     },
     {

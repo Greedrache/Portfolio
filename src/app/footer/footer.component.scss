@@ -38,16 +38,45 @@ footer {
     gap: 24px;
 }
 
+.mobile-only {
+    display: none;
+}
+
 @media (max-width: 768px) {
+    .desktop-only {
+        display: none;
+    }
+
+    .mobile-only {
+        display: flex;
+    }
+
     footer {
         height: auto;
         padding: 30px 20px;
         flex-direction: column;
-    }
-
-    .fistdiv {
         align-items: center;
-        text-align: center;
+
+        .logo-section {
+            order: 1;
+        }
+
+        .footerlinks.mobile-only {
+            order: 2;
+        }
+
+        .fistdiv {
+            order: 3;
+            flex-direction: row;
+            align-items: center;
+            text-align: center;
+            gap: 15px;
+            margin-top: 24px;
+
+            br {
+                display: none;
+            }
+        }
     }
 
     .footerlinks {

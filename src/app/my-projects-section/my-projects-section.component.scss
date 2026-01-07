@@ -29,9 +29,13 @@
 }
 
 .project-details {
-  margin-top: 2rem;
+  margin-top: 0;
   background-color: #2d383f;
-    padding: 20px;
+  padding: 20px;
+  margin-left: -150px;
+  margin-right: -150px;
+  padding-left: 150px;
+  padding-right: 150px;
 }
 
 .project-content {

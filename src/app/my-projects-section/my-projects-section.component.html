@@ -3,11 +3,8 @@
 
   <!-- Projekt-Navigation -->
   <div class="project-nav">
-    <button class="button-design"
-      *ngFor="let project of projects; let i = index"
-      (click)="activeProjectIndex = i"
-      [class.active]="activeProjectIndex === i"
-    >
+    <button class="button-design" *ngFor="let project of projects; let i = index" (click)="activeProjectIndex = i"
+      [class.active]="activeProjectIndex === i">
       {{ project.title }}
     </button>
   </div>
@@ -20,13 +17,13 @@
           <h3>{{ projects[activeProjectIndex].title }}</h3>
           <span class="duration">{{ projects[activeProjectIndex].duration }}</span>
         </div>
-        
+
         <h4>About the project</h4>
         <p class="description">{{ projects[activeProjectIndex].description }}</p>
-        
+
         <h4>How I have organised my work process</h4>
         <p class="description">{{ projects[activeProjectIndex].how_clean_code }}</p>
-        
+
         <h4>What I have learnt</h4>
         <p class="description">{{ projects[activeProjectIndex].learned }}</p>
       </div>
@@ -34,24 +31,23 @@
         <div class="tech-stack">
           <span>Technologies</span>
           <div class="tech-icons">
-            <img *ngFor="let tech of projects[activeProjectIndex].tech" 
-                 [src]="tech.img" 
-                 [alt]="tech.name" 
-                 [title]="tech.name">
+            <img *ngFor="let tech of projects[activeProjectIndex].tech" [src]="tech.img" [alt]="tech.name"
+              [title]="tech.name">
           </div>
         </div>
         <div class="project-image">
           <img [src]="projects[activeProjectIndex].img" [alt]="projects[activeProjectIndex].title">
         </div>
         <div class="project-links">
+          <a href="#" target="_blank">
+            Live Test
+          </a>
           <ng-container *ngIf="projects[activeProjectIndex].githubLink">
             <a [href]="projects[activeProjectIndex].githubLink" target="_blank">
               GitHub
             </a>
           </ng-container>
-          <a href="#" target="_blank">
-            Live Test
-          </a>
+         
         </div>
       </div>
     </div>
