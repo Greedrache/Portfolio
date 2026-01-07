@@ -43,7 +43,8 @@ export class ContactMeSectionComponent {
 
       fetch('https://formspree.io/f/xkogdnvj', {
         method: 'POST',
-        body: formData
+        body: formData,
+        mode: 'no-cors'
       }).then(() => {
         // Success - show toast
         this.showSuccessMessage = true;

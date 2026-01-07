@@ -113,7 +113,7 @@ export class TranslationService {
     'contact.errorEmail': { en: 'Please enter a valid email', de: 'Bitte gib eine gültige E-Mail ein' },
     'contact.errorMessage': { en: 'Message must be at least 10 characters', de: 'Nachricht muss mindestens 10 Zeichen lang sein' },
     'contact.errorPrivacy': { en: 'You must agree to the privacy policy', de: 'Du musst der Datenschutzerklärung zustimmen' },
-    'contact.successMessage': { en: 'Message sent successfully!', de: 'Nachricht erfolgreich versendet!' },
+    'contact.successMessage': { en: 'Thank you! I will get back to you soon.', de: 'Vielen Dank! Ich melde mich bald bei Ihnen.' },
 
     // Footer
     'footer.legalNotice': { en: 'Legal Notice', de: 'Impressum' },
