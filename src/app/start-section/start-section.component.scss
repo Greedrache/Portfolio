@@ -91,31 +91,202 @@ section {
     }
 }
 
+// Mobile Header
+.mobile-header {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 15px 20px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(38, 46, 52, 0.95);
+    z-index: 1000;
+}
+
+.logo-info-mobile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    img {
+        width: 40px;
+        height: auto;
+    }
+
+    .name-text {
+        display: flex;
+        flex-direction: column;
+
+        .name {
+            color: white;
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .title {
+            color: #89bcd9;
+            margin: 0;
+            font-size: 12px;
+            margin-top: -2px;
+        }
+    }
+}
+
+.burger-menu {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #89bcd9;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+}
+
+// Mobile Menu Overlay
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(38, 46, 52, 0.98);
+    z-index: 2000;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+
+    &.open {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .close-menu {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: transparent;
+        border: none;
+        color: #89bcd9;
+        font-size: 40px;
+        cursor: pointer;
+        padding: 10px;
+
+        &:hover {
+            color: white;
+        }
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        color: white;
+        text-decoration: none;
+        font-size: 24px;
+        font-family: 'Josefin Sans', sans-serif;
+        transition: color 0.3s;
+
+        img {
+            width: 30px;
+            height: auto;
+        }
+
+        &:hover {
+            color: #89bcd9;
+        }
+    }
+
+    .language-buttons {
+        display: flex;
+        gap: 15px;
+        margin-top: 10px;
+
+        .lang-btn {
+            background: transparent;
+            border: 2px solid #89bcd9;
+            color: #89bcd9;
+            padding: 10px 25px;
+            font-size: 18px;
+            font-family: 'Josefin Sans', sans-serif;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background-color: #89bcd9;
+                color: #262e34;
+            }
+        }
+    }
+}
+
+.desktop-only {
+    display: flex;
+}
+
 @media (max-width: 768px) {
+    .mobile-header {
+        display: flex;
+    }
+
+    .mobile-menu {
+        display: flex;
+    }
+
+    .desktop-only {
+        display: none !important;
+    }
+
     .row {
         flex-direction: column;
         align-items: center;
+        padding-top: 80px;
     }
 
     section {
         width: 100%;
         height: auto;
-        min-height: 50vh;
+        min-height: auto;
         padding: 20px;
         box-sizing: border-box;
     }
 
+    .image-section {
+        order: 1;
+    }
+
+    .content-section {
+        order: 2;
+    }
+
     .myimg {
-        width: 300px;
+        width: 280px;
     }
 
     .blue-circle {
-        width: 300px;
-        margin-top: 100px;
+        width: 280px;
+        margin-top: 80px;
     }
 
     h1 {
         font-size: 40px;
+        margin-top: 10px;
     }
 
     h2 {
@@ -123,22 +294,22 @@ section {
     }
 
     .social-icons {
-        position: relative;
-        right: auto;
-        flex-direction: row !important;
-        margin-bottom: 20px;
-        margin-top: 10px;
+        display: none !important;
+    }
+
+    .logo-social-container {
+        display: none !important;
     }
 }
 
 @media (max-width: 480px) {
     .myimg {
-        width: 250px;
+        width: 220px;
     }
 
     .blue-circle {
-        width: 250px;
-        margin-top: 80px;
+        width: 220px;
+        margin-top: 60px;
     }
 
     h1 {
@@ -151,5 +322,13 @@ section {
 
     section {
         padding: 10px;
+    }
+
+    .mobile-menu a {
+        font-size: 20px;
+
+        img {
+            width: 25px;
+        }
     }
 }

@@ -1,11 +1,37 @@
 <div class="row">
-    <section>
+    <div class="mobile-header">
+        <div class="logo-info-mobile">
+            <img src="/assets/img/logo.png" alt="">
+            <div class="name-text">
+                <p class="name">T.Thiele</p>
+                <p class="title">developer</p>
+            </div>
+        </div>
+        <button class="burger-menu" (click)="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+
+    <div class="mobile-menu" [class.open]="menuOpen">
+        <button class="close-menu" (click)="toggleMenu()">&times;</button>
+        <a href="https://github.com/Greedrache" (click)="toggleMenu()"><img src="assets/img/Github button-light.png" alt="My Github"> GitHub</a>
+        <a href="#" (click)="toggleMenu()"><img src="assets/img/Mail-light.png" alt="My Email"> Email</a>
+        <a href="#" (click)="toggleMenu()"><img src="assets/img/linkin-light.png" alt="My LinkedIn"> LinkedIn</a>
+        <div class="language-buttons">
+            <button class="lang-btn" (click)="toggleMenu()">EN</button>
+            <button class="lang-btn" (click)="toggleMenu()">DE</button>
+        </div>
+    </div>
+
+    <section class="image-section">
         <img class="blue-circle" src="/assets/img/blue-circle.png" alt="">
         <img class="myimg" src="/assets/img/tim.png" alt="">
     </section>
 
-    <section>
-        <div class="logo-social-container">
+    <section class="content-section">
+        <div class="logo-social-container desktop-only">
             <div class="logo-info">
                 <img src="/assets/img/logo.png" alt="">
                 <p style="color: white; margin-top: 0px;">T.Thiele</p>
