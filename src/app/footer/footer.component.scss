@@ -63,8 +63,12 @@ footer {
     footer {
         height: auto;
         padding: 30px 20px;
+    }
+
+    .footer-content {
         flex-direction: column;
         align-items: center;
+        gap: 20px;
 
         .logo-section {
             order: 1;
@@ -72,15 +76,18 @@ footer {
 
         .footerlinks.mobile-only {
             order: 2;
+            margin-top: 0;
         }
 
         .fistdiv {
             order: 3;
             flex-direction: row;
             align-items: center;
+            justify-content: center;
             text-align: center;
-            gap: 15px;
-            margin-top: 24px;
+            gap: 20px;
+            margin-top: 0;
+            white-space: nowrap;
 
             br {
                 display: none;
@@ -90,7 +97,7 @@ footer {
 
     .footerlinks {
         flex-wrap: wrap;
-        gap: 15px;
+        gap: 20px;
     }
 }
 
@@ -99,7 +106,14 @@ footer {
         padding: 20px 15px;
     }
 
+    .footer-content {
+        .fistdiv {
+            gap: 10px;
+            font-size: 14px;
+        }
+    }
+
     .footerlinks {
-        gap: 10px;
+        gap: 15px;
     }
 }

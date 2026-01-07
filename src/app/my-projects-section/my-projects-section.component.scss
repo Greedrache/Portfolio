@@ -170,18 +170,23 @@
 
 @media (max-width: 768px) {
     .projects-section {
-        margin-left: 20px;
-        margin-right: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .project-details-content {
+        padding: 0 20px;
     }
 
     .project-nav {
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         justify-content: center;
         gap: 0.5rem;
+        white-space: nowrap;
 
         button {
-            font-size: 18px;
-            padding: 15px;
+            font-size: 16px;
+            padding: 12px 10px;
         }
     }
 
@@ -212,14 +217,18 @@
 
 @media (max-width: 480px) {
     .projects-section {
-        margin-left: 15px;
-        margin-right: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .project-details-content {
+        padding: 0 15px;
     }
 
     .project-nav {
         button {
-            font-size: 16px;
-            padding: 10px;
+            font-size: 14px;
+            padding: 8px 6px;
         }
     }
 
