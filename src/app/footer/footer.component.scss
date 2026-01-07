@@ -5,9 +5,18 @@ footer {
     bottom: 0;
     font-family: 'Josefin Sans', sans-serif;
     display: flex;
+    justify-content: center;
     color: #262e34;
     margin-top: 64px;
-   
+}
+
+.footer-content {
+    display: flex;
+    width: 100%;
+    max-width: 1600px;
+    padding: 0 50px;
+    box-sizing: border-box;
+    align-items: center;
 
     div {
         margin: auto;
