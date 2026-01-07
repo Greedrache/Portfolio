@@ -2,7 +2,7 @@
     max-width: 800px;
     margin: 0 auto;
     padding: 40px 20px;
-    padding-top: 80px;
+    padding-top: 40px;
     font-family: 'Josefin Sans', sans-serif;
     color: white;
     line-height: 1.6;
@@ -43,23 +43,23 @@
     }
 
     .top-bar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        display: flex;
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        display: none;
         justify-content: center;
-        background-color: #0d1117;
-        z-index: 1000;
-        border-bottom: 1px solid #30363d;
+        background-color: transparent;
+        z-index: auto;
+        border-bottom: none;
 
         .top-bar-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
             width: 100%;
-            max-width: 1600px;
-            padding: 15px 40px;
+            max-width: none;
+            padding: 0;
         }
     }
 
@@ -70,7 +70,7 @@
         text-decoration: none;
         border: 1px solid #89bcd9;
         border-radius: 20px;
-        transition: background-color 0.3s;
+        transition: background-color 0.1s;
 
         &:hover {
             background-color: #3f4b54;
@@ -90,7 +90,7 @@
             cursor: pointer;
             font-family: 'Josefin Sans', sans-serif;
             font-size: 14px;
-            transition: background-color 0.3s, color 0.3s;
+            transition: background-color 0.1s, color 0.1s;
 
             &:hover {
                 background-color: #3f4b54;
@@ -107,13 +107,23 @@
 @media (max-width: 768px) {
     .legal-notice-container {
         padding: 20px 15px;
-        padding-top: 70px;
+        padding-top: 20px;
 
         .top-bar {
-            padding: 10px 15px;
+            display: flex !important;
+            position: relative;
+            margin-bottom: 20px;
+            padding: 15px 10px;
+            background-color: transparent;
+            justify-content: space-between;
+            align-items: center;
 
             .top-bar-content {
                 gap: 15px;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
             }
         }
 
@@ -123,7 +133,7 @@
             align-items: center;
             gap: 5px;
             padding: 8px 12px;
-            font-size: 14px;
+            font-size: 12px;
         }
 
         h1 {

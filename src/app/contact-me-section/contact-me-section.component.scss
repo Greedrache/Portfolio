@@ -55,7 +55,7 @@ button {
     border-radius: 20px;
     font-family: 'Josefin Sans', sans-serif;
     cursor: not-allowed;
-    transition: all 0.3s ease;
+    transition: all 0.1s ease;
     opacity: 0.6;
 
     &.active {
@@ -107,6 +107,7 @@ button {
         a {
             color: #89bcd9;
             text-decoration: none;
+            transition: text-decoration 0.1s;
 
             &:hover {
                 text-decoration: underline;

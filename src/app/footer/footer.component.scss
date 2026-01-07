@@ -26,6 +26,7 @@ footer {
     a{
         color: #262e34;
         text-decoration: none;
+        transition: color 0.1s;
 
         &:hover {
             color: white;
