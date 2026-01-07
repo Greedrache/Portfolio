@@ -2,10 +2,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 150px;
-    margin-right: 150px;
     font-size: 18px;
     flex-direction: row;
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 150px;
+    padding-right: 150px;
+    box-sizing: border-box;
 
     div {
         width: 50%;
@@ -51,6 +55,7 @@ button {
     margin-right: auto;
     max-width: 800px;
     padding: 0 20px;
+    box-sizing: border-box;
 
     p {
         font-size: 12px;
