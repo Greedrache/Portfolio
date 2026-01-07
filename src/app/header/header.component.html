@@ -7,15 +7,15 @@
         </div>
 
         <nav>
-            <a href="#why-me">Why me</a>
-            <a href="#skills">Skills</a>
-            <a href="#my-projects">Projects</a>
-            <a href="#contacts">Contact</a>
+            <a href="#why-me">{{ t('nav.whyMe') }}</a>
+            <a href="#skills">{{ t('nav.skills') }}</a>
+            <a href="#my-projects">{{ t('nav.projects') }}</a>
+            <a href="#contacts">{{ t('nav.contact') }}</a>
         </nav>
         
         <div class="buttons-section">
-            <button>EN</button>
-            <button>DE</button>
+            <button (click)="setLanguage('en')" [class.active]="currentLang === 'en'">EN</button>
+            <button (click)="setLanguage('de')" [class.active]="currentLang === 'de'">DE</button>
         </div>
     </div>
 </header>

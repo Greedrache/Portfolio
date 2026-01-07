@@ -20,8 +20,8 @@
         <a href="#" (click)="toggleMenu()"><img src="assets/img/Mail-light.png" alt="My Email"> Email</a>
         <a href="#" (click)="toggleMenu()"><img src="assets/img/linkin-light.png" alt="My LinkedIn"> LinkedIn</a>
         <div class="language-buttons">
-            <button class="lang-btn" (click)="toggleMenu()">EN</button>
-            <button class="lang-btn" (click)="toggleMenu()">DE</button>
+            <button class="lang-btn" [class.active]="currentLang === 'en'" (click)="setLanguage('en')">EN</button>
+            <button class="lang-btn" [class.active]="currentLang === 'de'" (click)="setLanguage('de')">DE</button>
         </div>
     </div>
 
@@ -44,7 +44,7 @@
             </div>
         </div>
         <h1>Tim Thiele</h1>
-        <h2>FRONTEND DEVELOPER</h2>
+        <h2>{{ t('start.title') }}</h2>
         <a class="arrow" href="#why-me"><img src="/assets/img/arrowdown.png" alt=""></a>
     </section>
 </div>

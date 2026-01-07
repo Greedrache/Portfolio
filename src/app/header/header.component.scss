@@ -84,9 +84,15 @@ header {
             font-weight: bold;
             background-color: #262e34;
             color: white;
+            transition: all 0.3s ease;
 
             &:hover {
                 background-color: #3f4b54;
+            }
+
+            &.active {
+                background-color: white;
+                color: #262e34;
             }
         }
     }

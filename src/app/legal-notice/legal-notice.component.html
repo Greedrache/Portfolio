@@ -1,10 +1,18 @@
 <div class="legal-notice-container">
-    <a routerLink="/" class="back-button">← Zurück</a>
+    <div class="top-bar">
+        <a routerLink="/" class="back-button">← {{ t('legal.back') }}</a>
+        <div class="lang-buttons">
+            <button (click)="translationService.setLanguage('en')" 
+                    [class.active]="translationService.lang === 'en'">EN</button>
+            <button (click)="translationService.setLanguage('de')" 
+                    [class.active]="translationService.lang === 'de'">DE</button>
+        </div>
+    </div>
     
-    <h1>Legal Notice</h1>
-    <h2>Impressum</h2>
+    <h1>{{ t('legal.title') }}</h1>
+    <h2>{{ t('legal.impressum') }}</h2>
 
-    <h3>Angaben gemäß § 5 TMG</h3>
+    <h3>{{ t('legal.according') }}</h3>
     <p>
         Tim Thiele<br>
         Hauptstraße 15<br>
@@ -12,58 +20,41 @@
         Deutschland
     </p>
 
-    <h3>Kontakt</h3>
+    <h3>{{ t('legal.contact') }}</h3>
     <p>
-        Telefon: +49 159 08600791<br>
-        E-Mail: thieletim15&#64;gmail.com
+        {{ t('legal.phone') }}: +49 159 08600791<br>
+        {{ t('legal.email') }}: thieletim15&#64;gmail.com
     </p>
 
-    <h3>Haftung für Inhalte</h3>
-    <p>
-        Als Diensteanbieter bin ich gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.
-        Nach §§ 8 bis 10 TMG bin ich als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
-    </p>
-    <p>
-        Eine Haftung ist erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich.
-        Bei Bekanntwerden von entsprechenden Rechtsverletzungen werde ich diese Inhalte umgehend entfernen.
-    </p>
+    <h3>{{ t('legal.liabilityContent.title') }}</h3>
+    <p>{{ t('legal.liabilityContent.text1') }}</p>
+    <p>{{ t('legal.liabilityContent.text2') }}</p>
 
-    <h3>Haftung für Links</h3>
-    <p>
-        Diese Website enthält Links zu externen Websites Dritter, auf deren Inhalte ich keinen Einfluss habe.
-        Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
-    </p>
-    <p>Bei Bekanntwerden von Rechtsverletzungen werde ich derartige Links umgehend entfernen.</p>
+    <h3>{{ t('legal.liabilityLinks.title') }}</h3>
+    <p>{{ t('legal.liabilityLinks.text1') }}</p>
+    <p>{{ t('legal.liabilityLinks.text2') }}</p>
 
-    <h3>Urheberrecht</h3>
-    <p>Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht.</p>
+    <h3>{{ t('legal.copyright.title') }}</h3>
+    <p>{{ t('legal.copyright.text') }}</p>
 
-    <h2>Datenschutzerklärung</h2>
+    <h2>{{ t('legal.privacy.title') }}</h2>
 
-    <h3>Allgemeiner Hinweis</h3>
-    <p>
-        Der Schutz Ihrer persönlichen Daten ist mir ein besonderes Anliegen.
-        Ihre Daten werden vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung behandelt.
-    </p>
+    <h3>{{ t('legal.privacy.general.title') }}</h3>
+    <p>{{ t('legal.privacy.general.text') }}</p>
 
-    <h3>Erhebung und Verarbeitung personenbezogener Daten</h3>
-    <p>
-        Diese Website kann grundsätzlich ohne Angabe personenbezogener Daten besucht werden.
-        Personenbezogene Daten werden nur erhoben, wenn Sie mir diese freiwillig mitteilen, z. B. über das Kontaktformular.
-    </p>
+    <h3>{{ t('legal.privacy.collection.title') }}</h3>
+    <p>{{ t('legal.privacy.collection.text') }}</p>
 
-    <h3>Kontaktformular</h3>
-    <p>
-        Wenn Sie mir per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Formular inklusive der von Ihnen angegebenen Kontaktdaten per E-Mail an mich übermittelt und zum Zweck der Bearbeitung der Anfrage gespeichert.
-    </p>
-    <p>Diese Daten werden nicht ohne Ihre Einwilligung weitergegeben und ausschließlich zur Bearbeitung Ihrer Anfrage verwendet.</p>
+    <h3>{{ t('legal.privacy.contactForm.title') }}</h3>
+    <p>{{ t('legal.privacy.contactForm.text1') }}</p>
+    <p>{{ t('legal.privacy.contactForm.text2') }}</p>
 
-    <h3>Ihre Rechte</h3>
-    <p>Sie haben jederzeit das Recht auf:</p>
+    <h3>{{ t('legal.privacy.rights.title') }}</h3>
+    <p>{{ t('legal.privacy.rights.intro') }}</p>
     <ul>
-        <li>Auskunft über Ihre gespeicherten Daten</li>
-        <li>Berichtigung oder Löschung</li>
-        <li>Einschränkung der Verarbeitung</li>
+        <li>{{ t('legal.privacy.rights.info') }}</li>
+        <li>{{ t('legal.privacy.rights.correction') }}</li>
+        <li>{{ t('legal.privacy.rights.restriction') }}</li>
     </ul>
-    <p>Hierzu können Sie mich jederzeit unter der oben angegebenen E-Mail-Adresse kontaktieren.</p>
+    <p>{{ t('legal.privacy.rights.contact') }}</p>
 </div>

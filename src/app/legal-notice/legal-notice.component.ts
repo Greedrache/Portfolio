@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { TranslationService } from '../services/translation.service';
 
 @Component({
   selector: 'app-legal-notice',
@@ -9,5 +10,9 @@ import { RouterModule } from '@angular/router';
   styleUrl: './legal-notice.component.scss'
 })
 export class LegalNoticeComponent {
+  constructor(public translationService: TranslationService) {}
 
+  t(key: string): string {
+    return this.translationService.translate(key);
+  }
 }
