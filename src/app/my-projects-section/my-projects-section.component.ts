@@ -34,6 +34,7 @@ export class MyProjectsSectionComponent {
       learnedKey: 'projects.join.learned',
       processKey: 'projects.join.process',
       githubLink: 'https://github.com/Greedrache/Join',
+      liveTestLink: 'https://greedrache.github.io/Join',
       img: 'assets/img/join.jpg'
     },
     {
@@ -49,6 +50,7 @@ export class MyProjectsSectionComponent {
       learnedKey: 'projects.pollo.learned',
       processKey: 'projects.pollo.process',
       githubLink: 'https://github.com/Greedrache/EL-POLLO-LOCO',
+      liveTestLink: 'https://greedrache.github.io/EL-POLLO-LOCO/',
       img: 'assets/img/elpolloloco.jpg'
     },
     {
@@ -65,6 +67,7 @@ export class MyProjectsSectionComponent {
       learnedKey: 'projects.pokedex.learned',
       processKey: 'projects.pokedex.process',
       githubLink: 'https://github.com/Greedrache/Pokedex',
+      liveTestLink: 'https://greedrache.github.io/Pokedex/',
       img: 'assets/img/pokedex.jpg'
     }
   ];

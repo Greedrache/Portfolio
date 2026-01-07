@@ -11,29 +11,36 @@
 </section>
 
 <section class="input-section">
-  <form action="https://formspree.io/f/xkogdnvj" method="POST">
+  <form action="https://formspree.io/f/xkogdnvj" method="POST" #contactForm>
     <div class="smallinputs">
       <nav>
         <p>{{ t('contact.yourName') }}</p>
-        <input type="text" name="name">
+        <input type="text" name="name" #nameInput>
+        <span class="error" *ngIf="showErrors && (!nameInput.value || nameInput.value.trim() === '' || nameInput.value.length < 3)">Name must be at least 3 characters</span>
       </nav>
 
       <nav>
         <p>{{ t('contact.yourEmail') }}</p>
-        <input type="email" name="email">
+        <input type="email" name="email" #emailInput>
+        <span class="error" *ngIf="showErrors && (!emailInput.value || emailInput.value.trim() === '' || !isValidEmail(emailInput.value))">Please enter a valid email</span>
       </nav>
     </div>
 
     <div class="biginput">
       <nav>
         <p>{{ t('contact.yourMessage') }}</p>
-        <textarea name="message"></textarea>
-        <span>
-          {{ t('contact.privacy') }} <a href="/legal-notice#privacy" target="_blank">{{ t('contact.privacyPolicy') }}</a> {{ t('contact.privacyAgree') }}
-        </span>
+        <textarea name="message" #messageInput></textarea>
+        <span class="error" *ngIf="showErrors && (!messageInput.value || messageInput.value.trim() === '' || messageInput.value.length < 10)">Message must be at least 10 characters</span>
       </nav>
+      
+      <div class="privacy-checkbox-wrapper">
+        <input type="checkbox" name="privacy" #privacyCheckbox id="privacyCheck">
+        <label for="privacyCheck">
+          {{ t('contact.privacy') }} <a href="/legal-notice#privacy" target="_blank">{{ t('contact.privacyPolicy') }}</a> {{ t('contact.privacyAgree') }}
+        </label>
+      </div>
     </div>
 
-    <button type="submit">{{ t('contact.send') }}</button>
+    <button type="submit" (click)="onSubmit(contactForm, nameInput, emailInput, messageInput, privacyCheckbox)" [class.active]="isFormValid(nameInput, emailInput, messageInput, privacyCheckbox)" [class.inactive]="!isFormValid(nameInput, emailInput, messageInput, privacyCheckbox)">{{ t('contact.send') }}</button>
   </form>
 </section>
