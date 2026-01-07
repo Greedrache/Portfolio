@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TranslationService } from '../services/translation.service';
 import { HeaderComponent } from '../header/header.component';
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-legal-notice',
   standalone: true,
-  imports: [RouterModule, HeaderComponent],
+  imports: [RouterModule, HeaderComponent, FooterComponent],
   templateUrl: './legal-notice.component.html',
   styleUrl: './legal-notice.component.scss'
 })
