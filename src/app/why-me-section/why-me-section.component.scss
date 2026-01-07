@@ -41,8 +41,8 @@ nav {
 @media (max-width: 768px) {
     section {
         flex-direction: column;
-        margin-left: 20px;
-        margin-right: 20px;
+        margin-left: 100px;
+        margin-right: 100px;
         text-align: center;
 
         div {
@@ -63,5 +63,10 @@ nav {
     section {
         margin-left: 15px;
         margin-right: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
     }
 }
