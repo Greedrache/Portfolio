@@ -1,11 +1,13 @@
 <div class="legal-notice-container">
     <div class="top-bar">
-        <a routerLink="/" class="back-button">← {{ t('legal.back') }}</a>
-        <div class="lang-buttons">
-            <button (click)="translationService.setLanguage('en')" 
-                    [class.active]="translationService.lang === 'en'">EN</button>
-            <button (click)="translationService.setLanguage('de')" 
-                    [class.active]="translationService.lang === 'de'">DE</button>
+        <div class="top-bar-content">
+            <a routerLink="/" class="back-button">{{ t('legal.back') }}</a>
+            <div class="lang-buttons">
+                <button (click)="translationService.setLanguage('en')" 
+                        [class.active]="translationService.lang === 'en'">EN</button>
+                <button (click)="translationService.setLanguage('de')" 
+                        [class.active]="translationService.lang === 'de'">DE</button>
+            </div>
         </div>
     </div>
     
@@ -37,7 +39,7 @@
     <h3>{{ t('legal.copyright.title') }}</h3>
     <p>{{ t('legal.copyright.text') }}</p>
 
-    <h2>{{ t('legal.privacy.title') }}</h2>
+    <h2 id="privacy">{{ t('legal.privacy.title') }}</h2>
 
     <h3>{{ t('legal.privacy.general.title') }}</h3>
     <p>{{ t('legal.privacy.general.text') }}</p>
