@@ -40,7 +40,7 @@
       <div class="privacy-checkbox-wrapper">
         <input type="checkbox" name="privacy" #privacyCheckbox id="privacyCheck">
         <label for="privacyCheck">
-          {{ t('contact.privacy') }} <a href="/browser/legal-notice#privacy" target="_blank">{{ t('contact.privacyPolicy') }}</a> {{ t('contact.privacyAgree') }}
+          {{ t('contact.privacy') }} <a href="/browser/legal-notice#privacy">{{ t('contact.privacyPolicy') }}</a> {{ t('contact.privacyAgree') }}
         </label>
       </div>
       <span class="error" *ngIf="showErrors && !privacyCheckbox.checked">{{ t('contact.errorPrivacy') }}</span>
