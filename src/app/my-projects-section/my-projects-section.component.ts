@@ -52,23 +52,6 @@ export class MyProjectsSectionComponent {
       githubLink: 'https://github.com/Greedrache/EL-POLLO-LOCO',
       liveTestLink: 'https://greedrache.github.io/EL-POLLO-LOCO/',
       img: 'assets/img/elpolloloco.jpg'
-    },
-    {
-      title: '3. Pokedex',
-      durationKey: 'projects.duration.2weeks',
-      tech: [
-        { name: 'HTML', img: 'assets/img/html.png' },
-        { name: 'CSS', img: 'assets/img/css.png' },
-        { name: 'JavaScript', img: 'assets/img/javascript.png' },
-        { name: 'Git', img: 'assets/img/git.png' },
-        { name: 'Firebase', img: 'assets/img/firebase.png' }
-      ],
-      descriptionKey: 'projects.pokedex.description',
-      learnedKey: 'projects.pokedex.learned',
-      processKey: 'projects.pokedex.process',
-      githubLink: 'https://github.com/Greedrache/Pokedex',
-      liveTestLink: 'https://greedrache.github.io/Pokedex/',
-      img: 'assets/img/pokedex.jpg'
     }
   ];
 }
