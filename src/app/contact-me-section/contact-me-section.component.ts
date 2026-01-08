@@ -35,33 +35,43 @@ export class ContactMeSectionComponent {
   onSubmit(form: any, nameInput: any, emailInput: any, messageInput: any, privacyCheckbox: any): void {
     this.showErrors = true;
     if (this.isFormValid(nameInput, emailInput, messageInput, privacyCheckbox)) {
-      // Formspree submission
-      const formData = new FormData();
-      formData.append('name', nameInput.value);
-      formData.append('email', emailInput.value);
-      formData.append('message', messageInput.value);
+      // Eigenen Server-Endpunkt verwenden
+      const data = {
+        name: nameInput.value,
+        email: emailInput.value,
+        message: messageInput.value
+      };
 
-      fetch('https://formspree.io/f/xkogdnvj', {
+      fetch('/api/send-mail', {
         method: 'POST',
-        body: formData,
-        mode: 'no-cors'
-      }).then(() => {
-        // Success - show toast
-        this.showSuccessMessage = true;
-        this.showErrors = false;
-        
-        // Reset form
-        form.reset();
-        nameInput.value = '';
-        emailInput.value = '';
-        messageInput.value = '';
-        privacyCheckbox.checked = false;
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+      .then(response => response.json())
+      .then(result => {
+        if (result.success) {
+          // Success - show toast
+          this.showSuccessMessage = true;
+          this.showErrors = false;
+          
+          // Reset form
+          form.reset();
+          nameInput.value = '';
+          emailInput.value = '';
+          messageInput.value = '';
+          privacyCheckbox.checked = false;
 
-        // Hide success message after 3 seconds
-        setTimeout(() => {
-          this.showSuccessMessage = false;
-        }, 3000);
-      }).catch(() => {
+          // Hide success message after 3 seconds
+          setTimeout(() => {
+            this.showSuccessMessage = false;
+          }, 3000);
+        } else {
+          alert('Es gab einen Fehler beim Versenden: ' + (result.error || 'Unbekannter Fehler'));
+        }
+      })
+      .catch(() => {
         alert('Es gab einen Fehler beim Versenden. Versuche es später erneut.');
       });
     }
