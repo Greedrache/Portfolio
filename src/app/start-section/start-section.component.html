@@ -16,9 +16,9 @@
 
     <div class="mobile-menu" [class.open]="menuOpen">
         <button class="close-menu" (click)="toggleMenu()">&times;</button>
-        <a href="https://github.com/Greedrache" (click)="toggleMenu()"><img src="assets/img/Github button-light.png" alt="My Github"> GitHub</a>
+        <a href="https://github.com/Greedrache" target="_blank" (click)="toggleMenu()"><img src="assets/img/Github button-light.png" alt="My Github"> GitHub</a>
         <a href="mailto:thieletim15@gmail.com" (click)="toggleMenu()"><img src="assets/img/Mail-light.png" alt="My Email"> Email</a>
-        <a href="#" (click)="toggleMenu()"><img src="assets/img/linkin-light.png" alt="My LinkedIn"> LinkedIn</a>
+        <a href="#" target="_blank" (click)="toggleMenu()"><img src="assets/img/linkin-light.png" alt="My LinkedIn"> LinkedIn</a>
         <div class="language-buttons">
             <button class="lang-btn" [class.active]="currentLang === 'en'" (click)="setLanguage('en')">EN</button>
             <button class="lang-btn" [class.active]="currentLang === 'de'" (click)="setLanguage('de')">DE</button>
@@ -38,9 +38,9 @@
                 <p style="color: #89bcd9; margin-top: -18px;">developer</p>
             </div>
             <div class="social-icons">
-                <a href="https://github.com/Greedrache"><img src="assets/img/Github button-light.png" alt="My Github"></a>
+                <a href="https://github.com/Greedrache" target="_blank"><img src="assets/img/Github button-light.png" alt="My Github"></a>
                 <a href="mailto:thieletim15@gmail.com"><img src="assets/img/Mail-light.png" alt="My Email"></a>
-                <a href="#"><img src="assets/img/linkin-light.png" alt="My LinkedIn"></a>
+                <a href="#" target="_blank"><img src="assets/img/linkin-light.png" alt="My LinkedIn"></a>
             </div>
         </div>
         <h1>Tim Thiele</h1>
