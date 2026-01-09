@@ -46,7 +46,7 @@
       <span class="error" *ngIf="showErrors && !privacyCheckbox.checked">{{ t('contact.errorPrivacy') }}</span>
     </div>
 
-    <button type="button" (click)="onSubmit(contactForm, nameInput, emailInput, messageInput, privacyCheckbox)" [class.active]="isFormValid(nameInput, emailInput, messageInput, privacyCheckbox)" [class.inactive]="!isFormValid(nameInput, emailInput, messageInput, privacyCheckbox)">{{ t('contact.send') }}</button>
+    <button style="font-size: 16px;" type="button" (click)="onSubmit(contactForm, nameInput, emailInput, messageInput, privacyCheckbox)" [class.active]="isFormValid(nameInput, emailInput, messageInput, privacyCheckbox)" [class.inactive]="!isFormValid(nameInput, emailInput, messageInput, privacyCheckbox)">{{ t('contact.send') }}</button>
   </form>
 
   <div class="success-toast" *ngIf="showSuccessMessage">

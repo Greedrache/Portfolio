@@ -3,7 +3,7 @@
 
   <!-- Projekt-Navigation -->
   <div class="project-nav">
-    <button class="button-design" *ngFor="let project of projects; let i = index" (click)="activeProjectIndex = i"
+    <button style="font-size: 24px;" class="button-design" *ngFor="let project of projects; let i = index" (click)="activeProjectIndex = i"
       [class.active]="activeProjectIndex === i">
       {{ project.title }}
     </button>

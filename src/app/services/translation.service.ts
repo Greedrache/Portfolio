@@ -30,7 +30,8 @@ export class TranslationService {
 
     // Why Me Section
     'whyMe.title': { en: 'Why me', de: 'Warum ich' },
-    'whyMe.location': { en: 'I am located in Montabaur', de: 'Ich wohne in Montabaur' },
+    'whyMe.location.first': { en: 'I am', de: 'Ich wohne' },
+    'whyMe.location.second': { en: 'located in Montabaur..|', de: 'in Montabaur..|' },
     'whyMe.text': { 
       en: 'What I love about programming is that I can create websites and small games and present them to others. I especially enjoy working on layouts, design, and user interfaces in the frontend. When code doesn\'t work, I remain patient and often work intensively through problems until I find a solution. My goal is to start my career as a frontend developer with a long-term perspective as a full-stack developer.',
       de: 'Was ich am Programmieren liebe, ist, dass ich Websites und kleine Spiele erstellen und sie anderen präsentieren kann. Besonders gerne arbeite ich an Layouts, Design und Benutzeroberflächen im Frontend. Wenn Code nicht funktioniert, bleibe ich geduldig und arbeite oft intensiv an Problemen, bis ich eine Lösung finde. Mein Ziel ist es, meine Karriere als Frontend-Entwickler zu starten, mit einer langfristigen Perspektive als Full-Stack-Entwickler.'
