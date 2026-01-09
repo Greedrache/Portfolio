@@ -2,10 +2,13 @@ footer {
     background-color: #89bcd9;
     width: 100%;
     height: 200px;
-    bottom: 0;
     font-family: 'Josefin Sans', sans-serif;
     display: flex;
     justify-content: center;
+    position: relative;
+    bottom: 0;
+    right: 0;
+    left: 0;
     color: #262e34;
     margin-top: 64px;
 }
@@ -23,7 +26,7 @@ footer {
         text-align: center;
     }
 
-    a{
+    a {
         color: #262e34;
         text-decoration: none;
         transition: color 0.1s;
@@ -34,11 +37,11 @@ footer {
     }
 }
 
-.fistdiv{
-   display: flex;
-   text-align: left;
-   flex-direction: column;
-   align-items: flex-start;
+.fistdiv {
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .footerlinks {
