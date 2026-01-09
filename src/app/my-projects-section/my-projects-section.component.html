@@ -19,13 +19,22 @@
             <span class="duration">{{ t(projects[activeProjectIndex].durationKey) }}</span>
           </div>
 
-          <h4>{{ t('projects.about') }}</h4>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <img src="assets/img/elipse.png" alt="Stichpunkt" class="bullet-icon" style="width: 18px; height: 18px;" />
+            <h4 style="margin: 0;">{{ t('projects.about') }}</h4>
+          </div>
           <p class="description">{{ t(projects[activeProjectIndex].descriptionKey) }}</p>
 
-          <h4>{{ t('projects.process') }}</h4>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <img src="assets/img/elipse.png" alt="Stichpunkt" class="bullet-icon" style="width: 18px; height: 18px;" />
+            <h4 style="margin: 0;">{{ t('projects.process') }}</h4>
+          </div>
           <p class="description">{{ t(projects[activeProjectIndex].processKey) }}</p>
 
-          <h4>{{ t('projects.learned') }}</h4>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <img src="assets/img/elipse.png" alt="Stichpunkt" class="bullet-icon" style="width: 18px; height: 18px;" />
+            <h4 style="margin: 0;">{{ t('projects.learned') }}</h4>
+          </div>
           <p class="description">{{ t(projects[activeProjectIndex].learnedKey) }}</p>
         </div>
         <div class="project-right">

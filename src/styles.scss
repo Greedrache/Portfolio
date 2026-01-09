@@ -1,3 +1,8 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
 ::-webkit-scrollbar {
     width: 6px;
 }
@@ -17,7 +22,6 @@
 }
 
 body {
-    margin: 0;
     background-color: #262e34;
     font-family: 'Josefin Sans', sans-serif;
     color: white;
