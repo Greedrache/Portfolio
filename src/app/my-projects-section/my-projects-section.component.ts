@@ -34,7 +34,7 @@ export class MyProjectsSectionComponent {
       learnedKey: 'projects.join.learned',
       processKey: 'projects.join.process',
       githubLink: 'https://github.com/Greedrache/Join',
-      liveTestLink: 'https://greedrache.github.io/Join',
+      liveTestLink: 'http://tim-thiele.de/Join/',
       img: 'assets/img/join.jpg'
     },
     {
@@ -50,7 +50,7 @@ export class MyProjectsSectionComponent {
       learnedKey: 'projects.pollo.learned',
       processKey: 'projects.pollo.process',
       githubLink: 'https://github.com/Greedrache/EL-POLLO-LOCO',
-      liveTestLink: 'https://greedrache.github.io/EL-POLLO-LOCO/',
+      liveTestLink: 'http://tim-thiele.de/El%20Pollo%20Loco/',
       img: 'assets/img/elpolloloco.jpg'
     }
   ];
