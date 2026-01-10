@@ -19,13 +19,13 @@
     <div class="smallinputs">
       <nav>
         <p>{{ t('contact.yourName') }}</p>
-        <input type="text" name="name" #nameInput>
+        <input type="text" autocomplete="off" name="name" #nameInput>
         <span class="error" *ngIf="showErrors && (!nameInput.value || nameInput.value.trim() === '' || nameInput.value.length < 3)">{{ t('contact.errorNameShort') }}</span>
       </nav>
 
       <nav>
         <p>{{ t('contact.yourEmail') }}</p>
-        <input type="email" name="email" #emailInput>
+        <input type="email" autocomplete="off" name="email" #emailInput>
         <span class="error" *ngIf="showErrors && (!emailInput.value || emailInput.value.trim() === '' || !isValidEmail(emailInput.value))">{{ t('contact.errorEmail') }}</span>
       </nav>
     </div>
@@ -33,7 +33,7 @@
     <div class="biginput">
       <nav>
         <p>{{ t('contact.yourMessage') }}</p>
-        <textarea name="message" #messageInput></textarea>
+        <textarea name="message" autocomplete="off" #messageInput></textarea>
         <span class="error" *ngIf="showErrors && (!messageInput.value || messageInput.value.trim() === '' || messageInput.value.length < 10)">{{ t('contact.errorMessage') }}</span>
       </nav>
       
