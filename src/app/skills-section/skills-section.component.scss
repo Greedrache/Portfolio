@@ -38,8 +38,10 @@ section {
         grid-template-columns: repeat(4, 1fr);
         gap: 20px;
         width: 100%;
-            justify-items: center;
-            align-items: center;
+        color: #89bcd9;
+        text-align: center;
+        justify-items: center;
+        align-items: center;
     }
 }
 
@@ -125,11 +127,11 @@ section {
     }
 
 
-    .skills{
+    .skills {
         display: flex;
         justify-content: center;
     }
- 
+
 
     .skill-direction {
         .skills-row {
@@ -187,6 +189,7 @@ section {
     }
 
     .learning-skills {
+
         &::before,
         &::after {
             width: 480px;
@@ -201,6 +204,7 @@ section {
             opacity: 1;
             background-size: 85% !important;
         }
+
         &::after {
             background-image: url('../../assets/img/python-hover.png');
             opacity: 0;

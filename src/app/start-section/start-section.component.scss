@@ -100,13 +100,15 @@ section {
     justify-content: center;
     max-width: 1200px;
     width: 100%;
-    margin: 40px auto 0 auto;
-    padding-top: 20px;
+    margin: 0 auto;
+    padding-top: 0;
+    min-height: 100vh;
+    align-items: flex-end;
 }
 
 /* Fester Abstand zum Header */
 .row {
-    margin-top: 40px;
+    margin-top: 0;
 }
 
 .logo-social-container {
