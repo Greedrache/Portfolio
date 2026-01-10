@@ -18,23 +18,29 @@
   <form #contactForm novalidate>
     <div class="smallinputs">
       <nav>
-        <p>{{ t('contact.yourName') }}</p>
-        <input type="text" autocomplete="off" name="name" #nameInput>
-        <span class="error" *ngIf="showErrors && (!nameInput.value || nameInput.value.trim() === '' || nameInput.value.length < 3)">{{ t('contact.errorNameShort') }}</span>
+        <p>
+          <span *ngIf="! (showErrors && (!nameInput.value || nameInput.value.trim() === '' || nameInput.value.length < 3))">{{ t('contact.yourName') }}</span>
+          <span class="error" *ngIf="showErrors && (!nameInput.value || nameInput.value.trim() === '' || nameInput.value.length < 3)">{{ t('contact.errorNameShort') }}</span>
+        </p>
+        <input type="text" autocomplete="off" name="name" #nameInput [class.error-border]="showErrors && (!nameInput.value || nameInput.value.trim() === '' || nameInput.value.length < 3)">
       </nav>
 
       <nav>
-        <p>{{ t('contact.yourEmail') }}</p>
-        <input type="email" autocomplete="off" name="email" #emailInput>
-        <span class="error" *ngIf="showErrors && (!emailInput.value || emailInput.value.trim() === '' || !isValidEmail(emailInput.value))">{{ t('contact.errorEmail') }}</span>
+        <p>
+          <span *ngIf="! (showErrors && (!emailInput.value || emailInput.value.trim() === '' || !isValidEmail(emailInput.value)))">{{ t('contact.yourEmail') }}</span>
+          <span class="error" *ngIf="showErrors && (!emailInput.value || emailInput.value.trim() === '' || !isValidEmail(emailInput.value))">{{ t('contact.errorEmail') }}</span>
+        </p>
+        <input type="email" autocomplete="off" name="email" #emailInput [class.error-border]="showErrors && (!emailInput.value || emailInput.value.trim() === '' || !isValidEmail(emailInput.value))">
       </nav>
     </div>
 
     <div class="biginput">
       <nav>
-        <p>{{ t('contact.yourMessage') }}</p>
-        <textarea name="message" autocomplete="off" #messageInput></textarea>
-        <span class="error" *ngIf="showErrors && (!messageInput.value || messageInput.value.trim() === '' || messageInput.value.length < 10)">{{ t('contact.errorMessage') }}</span>
+        <p>
+          <span *ngIf="! (showErrors && (!messageInput.value || messageInput.value.trim() === '' || messageInput.value.length < 10))">{{ t('contact.yourMessage') }}</span>
+          <span class="error" *ngIf="showErrors && (!messageInput.value || messageInput.value.trim() === '' || messageInput.value.length < 10)">{{ t('contact.errorMessage') }}</span>
+        </p>
+        <textarea name="message" autocomplete="off" #messageInput [class.error-border]="showErrors && (!messageInput.value || messageInput.value.trim() === '' || messageInput.value.length < 10)"></textarea>
       </nav>
       
       <div class="privacy-checkbox-wrapper">
