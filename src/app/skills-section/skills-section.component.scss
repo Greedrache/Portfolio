@@ -12,18 +12,7 @@ section {
 
     div {
         width: 50%;
-
     }
-}
-
-.skills {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #89bcd9;
-    text-align: center;
-    justify-content: center;
-    font-size: 16px;
 
     img {
         width: 36px;
@@ -49,6 +38,8 @@ section {
         grid-template-columns: repeat(4, 1fr);
         gap: 20px;
         width: 100%;
+            justify-items: center;
+            align-items: center;
     }
 }
 
@@ -72,23 +63,53 @@ section {
     font-size: 18px;
     text-align: center;
     position: relative;
+    z-index: 0;
     padding: 40px;
 
-    &::before {
+    &::before,
+    &::after {
         content: '';
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 380px;
-        height: 380px;
-        background-color: #2d383f;
+        width: 520px;
+        height: 520px;
         border-radius: 50%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        transition: opacity 200ms ease;
+        will-change: opacity;
+        pointer-events: none;
+    }
+
+    &::before {
+        background-image: url('../../assets/img/python-elipse.png');
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(0deg);
+        z-index: -2;
+        background-size: 85% !important;
+    }
+
+    &::after {
+        background-image: url('../../assets/img/python-hover.png');
+        opacity: 0;
+        transform: translate(-50%, -50%);
+        background-size: cover !important;
         z-index: -1;
+    }
+
+    &:hover::after {
+        opacity: 1;
+    }
+
+    &:hover::before {
+        opacity: 0;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1068px) {
     section {
         flex-direction: column;
         padding-left: 20px;
@@ -103,6 +124,11 @@ section {
         display: none;
     }
 
+
+    .skills{
+        display: flex;
+        justify-content: center;
+    }
  
 
     .skill-direction {
@@ -114,10 +140,26 @@ section {
 
     .learning-skills {
         padding: 30px 20px;
+        margin-top: 120px;
+
+        &::before,
+        &::after {
+            width: 520px;
+            height: 540px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
 
         &::before {
-            width: 380px;
-            height: 400px;
+            background-image: url('../../assets/img/python-elipse.png');
+            opacity: 1;
+            background-size: 85% !important;
+        }
+
+        &::after {
+            background-image: url('../../assets/img/python-hover.png');
+            opacity: 0;
         }
     }
 }
@@ -145,9 +187,23 @@ section {
     }
 
     .learning-skills {
+        &::before,
+        &::after {
+            width: 480px;
+            height: 500px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
         &::before {
-            width: 350px;
-            height: 400px;
+            background-image: url('../../assets/img/python-elipse.png');
+            opacity: 1;
+            background-size: 85% !important;
+        }
+        &::after {
+            background-image: url('../../assets/img/python-hover.png');
+            opacity: 0;
         }
     }
 
