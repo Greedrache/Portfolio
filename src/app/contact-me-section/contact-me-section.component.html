@@ -44,7 +44,7 @@
       </nav>
       
       <div class="privacy-checkbox-wrapper">
-        <input type="checkbox" name="privacy" #privacyCheckbox id="privacyCheck">
+        <input type="checkbox" name="privacy" #privacyCheckbox id="privacyCheck" [class.wrong]="showErrors && !privacyCheckbox.checked">
         <label for="privacyCheck">
           {{ t('contact.privacy') }} <a href="/legal-notice#privacy">{{ t('contact.privacyPolicy') }}</a> {{ t('contact.privacyAgree') }}
         </label>

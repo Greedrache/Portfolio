@@ -85,12 +85,49 @@ button {
     word-break: break-word;
 
     input[type="checkbox"] {
-        width: 18px;
-        height: 18px;
+        width: 22px;
+        height: 22px;
         cursor: pointer;
-        accent-color: #89bcd9;
-        border-radius: 3px;
+        -webkit-appearance: none;
+        appearance: none;
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        vertical-align: middle;
+        background-image: url('/assets/img/checkbox.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        border: none;
         flex-shrink: 0;
+        outline: none;
+        box-shadow: none;
+        pointer-events: auto;
+    }
+
+    /* Hover shows hover-image only when NOT checked and NOT in wrong state */
+    input[type="checkbox"]:not(.wrong):not(:checked):hover {
+        background-image: url('/assets/img/checkbox-hover.png');
+    }
+
+    /* Checked state: keep full image even on hover */
+    input[type="checkbox"]:checked {
+        background-image: url('/assets/img/checkbox-full.png');
+    }
+    input[type="checkbox"]:checked:hover {
+        background-image: url('/assets/img/checkbox-full.png');
+    }
+
+    /* Wrong / invalid state (applied via class binding) - still clickable */
+    input[type="checkbox"].wrong {
+        background-image: url('/assets/img/checkbox-wrong.png');
+        pointer-events: auto;
+        cursor: pointer;
+    }
+
+    /* If a wrong checkbox is checked, show the full image (checked state wins) */
+    input[type="checkbox"].wrong:checked {
+        background-image: url('/assets/img/checkbox-full.png');
     }
 
     label {
@@ -151,7 +188,7 @@ button {
         margin-left: 16px;
     }
 
-    input,
+    input:not([type="checkbox"]),
     textarea {
         padding: 12px;
         resize: none;
@@ -176,10 +213,7 @@ button {
         box-shadow: 0 0 0 4px rgba(255, 107, 107, 0.08);
     }
 
-    input[type="checkbox"].error-border {
-        outline: 2px solid rgba(255, 107, 107, 0.18);
-        outline-offset: 2px;
-    }
+    /* removed generic checkbox outline to avoid conflicting visuals with image-based checkbox */
 }
 
 .smallinputs {
@@ -197,9 +231,6 @@ button {
 
 .biginput {
 
-    input {
-        padding-bottom: 100px !important;
-    }
 
     span:not(.error) {
         font-size: 12px;
