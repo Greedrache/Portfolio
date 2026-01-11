@@ -132,7 +132,7 @@ button {
 
     label {
         cursor: pointer;
-        font-size: 12px;
+        font-size: 16px;
         color: white;
         margin: 0;
         display: flex;
@@ -156,7 +156,7 @@ button {
 .error {
     display: block;
     color: #ff6b6b;
-    font-size: 12px;
+    font-size: 16px;
     margin-top: 5px;
     margin-left: 10px;
 }
@@ -182,7 +182,7 @@ button {
     box-sizing: border-box;
 
     p {
-        font-size: 12px;
+        font-size: 16px;
         color: #89bcd9;
         margin-bottom: 0px;
         margin-left: 16px;
@@ -233,7 +233,7 @@ button {
 
 
     span:not(.error) {
-        font-size: 12px;
+        font-size: 16px;
         color: #89bcd9;
         margin-left: 4px;
     }
@@ -322,7 +322,7 @@ button {
         top: 20px;
         right: 20px;
         padding: 12px 20px;
-        font-size: 14px;
+        font-size: 16px;
     }
 }
 
