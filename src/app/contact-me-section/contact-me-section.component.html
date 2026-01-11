@@ -15,6 +15,9 @@
 </section>
 
 <section class="input-section">
+    <div class="error-toast" *ngIf="showErrorToast">
+      {{ errorToastMessage }}
+    </div>
   <form #contactForm novalidate>
     <div class="smallinputs">
       <nav>

@@ -19,6 +19,8 @@ export class TranslationService {
   currentLang$ = this.currentLang.asObservable();
 
   private translations: Translations = {
+      'contact.errorSend': { en: 'There was an error sending your message', de: 'Es gab einen Fehler beim Versenden' },
+      'contact.errorSendAgain': { en: 'There was an error sending. Please try again later.', de: 'Es gab einen Fehler beim Versenden. Versuche es später erneut.' },
     // Header
     'nav.whyMe': { en: 'Why me', de: 'Warum ich' },
     'nav.skills': { en: 'Skills', de: 'Fähigkeiten' },

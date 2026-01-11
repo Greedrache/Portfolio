@@ -11,6 +11,8 @@ import { TranslationService } from '../services/translation.service';
   styleUrl: './contact-me-section.component.scss'
 })
 export class ContactMeSectionComponent {
+      showErrorToast = false;
+      errorToastMessage = '';
     errorStates = {
       name: false,
       email: false,
@@ -100,11 +102,15 @@ export class ContactMeSectionComponent {
             this.showSuccessMessage = false;
           }, 3000);
         } else {
-          alert('Es gab einen Fehler beim Versenden: ' + (result.error || 'Unbekannter Fehler'));
+          this.errorToastMessage = this.t('contact.errorSend') + (result.error ? ': ' + result.error : '');
+          this.showErrorToast = true;
+          setTimeout(() => { this.showErrorToast = false; }, 3500);
         }
       })
       .catch(() => {
-        alert('Es gab einen Fehler beim Versenden. Versuche es später erneut.');
+        this.errorToastMessage = this.t('contact.errorSendAgain');
+        this.showErrorToast = true;
+        setTimeout(() => { this.showErrorToast = false; }, 3500);
       });
     }
   }
