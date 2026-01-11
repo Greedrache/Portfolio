@@ -46,7 +46,7 @@
       <div class="privacy-checkbox-wrapper">
         <input type="checkbox" name="privacy" #privacyCheckbox id="privacyCheck" [class.wrong]="showErrors && errorStates.privacy" (change)="onInputChange('privacy', privacyCheckbox)">
         <label for="privacyCheck">
-          {{ t('contact.privacy') }} <a href="/legal-notice#privacy">{{ t('contact.privacyPolicy') }}</a> {{ t('contact.privacyAgree') }}
+          {{ t('contact.privacy') }} <a [routerLink]="['/legal-notice']" fragment="privacy">{{ t('contact.privacyPolicy') }}</a> {{ t('contact.privacyAgree') }}
         </label>
       </div>
       <span class="error" *ngIf="showErrors && errorStates.privacy">{{ t('contact.errorPrivacy') }}</span>

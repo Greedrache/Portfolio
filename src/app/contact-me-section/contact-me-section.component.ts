@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { TranslationService } from '../services/translation.service';
 
 @Component({
   selector: 'app-contact-me-section',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './contact-me-section.component.html',
   styleUrl: './contact-me-section.component.scss'
 })
