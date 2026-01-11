@@ -10,6 +10,30 @@ import { TranslationService } from '../services/translation.service';
   styleUrl: './contact-me-section.component.scss'
 })
 export class ContactMeSectionComponent {
+    errorStates = {
+      name: false,
+      email: false,
+      message: false,
+      privacy: false
+    };
+   
+    onInputChange(field: string, input: any): void {
+      if (!this.showErrors) return;
+      switch (field) {
+        case 'name':
+          this.errorStates.name = !(input.value && input.value.trim() !== '' && input.value.length >= 3);
+          break;
+        case 'email':
+          this.errorStates.email = !(input.value && input.value.trim() !== '' && this.isValidEmail(input.value));
+          break;
+        case 'message':
+          this.errorStates.message = !(input.value && input.value.trim() !== '' && input.value.length >= 10);
+          break;
+        case 'privacy':
+          this.errorStates.privacy = !input.checked;
+          break;
+      }
+    }
   showErrors = false;
   showSuccessMessage = false;
 
@@ -33,9 +57,15 @@ export class ContactMeSectionComponent {
   }
 
   onSubmit(form: any, nameInput: any, emailInput: any, messageInput: any, privacyCheckbox: any): void {
-    this.showErrors = true;
-    if (this.isFormValid(nameInput, emailInput, messageInput, privacyCheckbox)) {
-      // Eigenen Server-Endpunkt verwenden
+
+    this.errorStates.name = !(nameInput.value && nameInput.value.trim() !== '' && nameInput.value.length >= 3);
+    this.errorStates.email = !(emailInput.value && emailInput.value.trim() !== '' && this.isValidEmail(emailInput.value));
+    this.errorStates.message = !(messageInput.value && messageInput.value.trim() !== '' && messageInput.value.length >= 10);
+    this.errorStates.privacy = !privacyCheckbox.checked;
+    this.showErrors = this.errorStates.name || this.errorStates.email || this.errorStates.message || this.errorStates.privacy;
+
+    if (!this.showErrors) {
+
       const data = {
         name: nameInput.value,
         email: emailInput.value,
@@ -55,7 +85,8 @@ export class ContactMeSectionComponent {
           // Success - show toast
           this.showSuccessMessage = true;
           this.showErrors = false;
-          
+          this.errorStates = { name: false, email: false, message: false, privacy: false };
+
           // Reset form
           form.reset();
           nameInput.value = '';

@@ -19,37 +19,37 @@
     <div class="smallinputs">
       <nav>
         <p>
-          <span *ngIf="! (showErrors && (!nameInput.value || nameInput.value.trim() === '' || nameInput.value.length < 3))">{{ t('contact.yourName') }}</span>
-          <span class="error" *ngIf="showErrors && (!nameInput.value || nameInput.value.trim() === '' || nameInput.value.length < 3)">{{ t('contact.errorNameShort') }}</span>
+          <span *ngIf="! (showErrors && errorStates.name)">{{ t('contact.yourName') }}</span>
+          <span class="error" *ngIf="showErrors && errorStates.name">{{ t('contact.errorNameShort') }}</span>
         </p>
-        <input type="text" autocomplete="off" name="name" #nameInput [class.error-border]="showErrors && (!nameInput.value || nameInput.value.trim() === '' || nameInput.value.length < 3)">
+        <input type="text" autocomplete="off" name="name" #nameInput [class.error-border]="showErrors && errorStates.name" (input)="onInputChange('name', nameInput)">
       </nav>
 
       <nav>
         <p>
-          <span *ngIf="! (showErrors && (!emailInput.value || emailInput.value.trim() === '' || !isValidEmail(emailInput.value)))">{{ t('contact.yourEmail') }}</span>
-          <span class="error" *ngIf="showErrors && (!emailInput.value || emailInput.value.trim() === '' || !isValidEmail(emailInput.value))">{{ t('contact.errorEmail') }}</span>
+          <span *ngIf="! (showErrors && errorStates.email)">{{ t('contact.yourEmail') }}</span>
+          <span class="error" *ngIf="showErrors && errorStates.email">{{ t('contact.errorEmail') }}</span>
         </p>
-        <input type="email" autocomplete="off" name="email" #emailInput [class.error-border]="showErrors && (!emailInput.value || emailInput.value.trim() === '' || !isValidEmail(emailInput.value))">
+        <input type="email" autocomplete="off" name="email" #emailInput [class.error-border]="showErrors && errorStates.email" (input)="onInputChange('email', emailInput)">
       </nav>
     </div>
 
     <div class="biginput">
       <nav>
         <p>
-          <span *ngIf="! (showErrors && (!messageInput.value || messageInput.value.trim() === '' || messageInput.value.length < 10))">{{ t('contact.yourMessage') }}</span>
-          <span class="error" *ngIf="showErrors && (!messageInput.value || messageInput.value.trim() === '' || messageInput.value.length < 10)">{{ t('contact.errorMessage') }}</span>
+          <span *ngIf="! (showErrors && errorStates.message)">{{ t('contact.yourMessage') }}</span>
+          <span class="error" *ngIf="showErrors && errorStates.message">{{ t('contact.errorMessage') }}</span>
         </p>
-        <textarea name="message" autocomplete="off" #messageInput [class.error-border]="showErrors && (!messageInput.value || messageInput.value.trim() === '' || messageInput.value.length < 10)"></textarea>
+        <textarea name="message" autocomplete="off" #messageInput [class.error-border]="showErrors && errorStates.message" (input)="onInputChange('message', messageInput)"></textarea>
       </nav>
       
       <div class="privacy-checkbox-wrapper">
-        <input type="checkbox" name="privacy" #privacyCheckbox id="privacyCheck" [class.wrong]="showErrors && !privacyCheckbox.checked">
+        <input type="checkbox" name="privacy" #privacyCheckbox id="privacyCheck" [class.wrong]="showErrors && errorStates.privacy" (change)="onInputChange('privacy', privacyCheckbox)">
         <label for="privacyCheck">
           {{ t('contact.privacy') }} <a href="/legal-notice#privacy">{{ t('contact.privacyPolicy') }}</a> {{ t('contact.privacyAgree') }}
         </label>
       </div>
-      <span class="error" *ngIf="showErrors && !privacyCheckbox.checked">{{ t('contact.errorPrivacy') }}</span>
+      <span class="error" *ngIf="showErrors && errorStates.privacy">{{ t('contact.errorPrivacy') }}</span>
     </div>
 
     <button style="font-size: 16px;" type="button" (click)="onSubmit(contactForm, nameInput, emailInput, messageInput, privacyCheckbox)" [class.active]="isFormValid(nameInput, emailInput, messageInput, privacyCheckbox)" [class.inactive]="!isFormValid(nameInput, emailInput, messageInput, privacyCheckbox)">{{ t('contact.send') }}</button>
