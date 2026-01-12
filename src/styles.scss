@@ -27,8 +27,7 @@ body {
     font-family: 'Josefin Sans', sans-serif;
     color: white;
     overflow-x: hidden;
-    display: flex;
-    justify-content: flex-end;
+
 }
 
 .content-wrapper {
@@ -59,6 +58,8 @@ html {
     font-family: 'Anta';
     src: url('assets/fonts/Anta-Regular.ttf') format('truetype');
 }
+
+@import 'aos/dist/aos.css';
 
 @media (max-width: 768px) {
     h2 {
