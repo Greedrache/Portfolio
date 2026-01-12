@@ -7,10 +7,15 @@
         </div>
 
         <nav>
-            <a href="#why-me">{{ t('nav.whyMe') }}</a>
-            <a href="#skills">{{ t('nav.skills') }}</a>
-            <a href="#my-projects">{{ t('nav.projects') }}</a>
-            <a href="#contacts">{{ t('nav.contact') }}</a>
+            <a *ngIf="isOnLegalNoticePage(); else normalLinks" [routerLink]="['/']" fragment="why-me">{{ t('nav.whyMe') }}</a>
+            <a *ngIf="isOnLegalNoticePage(); else normalLinks2" [routerLink]="['/']" fragment="skills">{{ t('nav.skills') }}</a>
+            <a *ngIf="isOnLegalNoticePage(); else normalLinks3" [routerLink]="['/']" fragment="my-projects">{{ t('nav.projects') }}</a>
+            <a *ngIf="isOnLegalNoticePage(); else normalLinks4" [routerLink]="['/']" fragment="contacts">{{ t('nav.contact') }}</a>
+
+            <ng-template #normalLinks><a href="#why-me">{{ t('nav.whyMe') }}</a></ng-template>
+            <ng-template #normalLinks2><a href="#skills">{{ t('nav.skills') }}</a></ng-template>
+            <ng-template #normalLinks3><a href="#my-projects">{{ t('nav.projects') }}</a></ng-template>
+            <ng-template #normalLinks4><a href="#contacts">{{ t('nav.contact') }}</a></ng-template>
         </nav>
         
         <div class="buttons-section">
