@@ -1,7 +1,8 @@
-<h2 id="contacts">{{ t('contact.title') }}</h2>
-<section class="infos">
+<div data-aos="fade-up-right">
+  <h2 id="contacts">{{ t('contact.title') }}</h2>
+  <section class="infos">
     <div class="intro-text">
-        <span>{{ t('contact.intro') }}</span>
+      <span>{{ t('contact.intro') }}</span>
     </div>
 
     <div class="contact-info">
@@ -12,53 +13,64 @@
         <img class="icons" src="assets/img/phone-icon.png" alt=""> Tel: +49 1590 8600 791
       </div>
     </div>
-</section>
+  </section>
 
-<section class="input-section">
+  <section class="input-section">
     <div class="error-toast" *ngIf="showErrorToast">
       {{ errorToastMessage }}
     </div>
-  <form #contactForm novalidate>
-    <div class="smallinputs">
-      <nav>
-        <p>
-          <span *ngIf="! (showErrors && errorStates.name)">{{ t('contact.yourName') }}</span>
-          <span class="error" *ngIf="showErrors && errorStates.name">{{ t('contact.errorNameShort') }}</span>
-        </p>
-        <input type="text" autocomplete="off" name="name" #nameInput [class.error-border]="showErrors && errorStates.name" (input)="onInputChange('name', nameInput)">
-      </nav>
+    <form #contactForm novalidate>
+      <div class="smallinputs">
+        <nav>
+          <p>
+            <span *ngIf="! (showErrors && errorStates.name)">{{ t('contact.yourName') }}</span>
+            <span class="error" *ngIf="showErrors && errorStates.name">{{ t('contact.errorNameShort') }}</span>
+          </p>
+          <input type="text" autocomplete="off" name="name" #nameInput
+            [class.error-border]="showErrors && errorStates.name" (input)="onInputChange('name', nameInput)">
+        </nav>
 
-      <nav>
-        <p>
-          <span *ngIf="! (showErrors && errorStates.email)">{{ t('contact.yourEmail') }}</span>
-          <span class="error" *ngIf="showErrors && errorStates.email">{{ t('contact.errorEmail') }}</span>
-        </p>
-        <input type="email" autocomplete="off" name="email" #emailInput [class.error-border]="showErrors && errorStates.email" (input)="onInputChange('email', emailInput)">
-      </nav>
-    </div>
-
-    <div class="biginput">
-      <nav>
-        <p>
-          <span *ngIf="! (showErrors && errorStates.message)">{{ t('contact.yourMessage') }}</span>
-          <span class="error" *ngIf="showErrors && errorStates.message">{{ t('contact.errorMessage') }}</span>
-        </p>
-        <textarea name="message" autocomplete="off" #messageInput [class.error-border]="showErrors && errorStates.message" (input)="onInputChange('message', messageInput)"></textarea>
-      </nav>
-      
-      <div class="privacy-checkbox-wrapper">
-        <input type="checkbox" name="privacy" #privacyCheckbox id="privacyCheck" [class.wrong]="showErrors && errorStates.privacy" (change)="onInputChange('privacy', privacyCheckbox)">
-        <label for="privacyCheck">
-          {{ t('contact.privacy') }} <a [routerLink]="['/legal-notice']" fragment="privacy">{{ t('contact.privacyPolicy') }}</a> {{ t('contact.privacyAgree') }}
-        </label>
+        <nav>
+          <p>
+            <span *ngIf="! (showErrors && errorStates.email)">{{ t('contact.yourEmail') }}</span>
+            <span class="error" *ngIf="showErrors && errorStates.email">{{ t('contact.errorEmail') }}</span>
+          </p>
+          <input type="email" autocomplete="off" name="email" #emailInput
+            [class.error-border]="showErrors && errorStates.email" (input)="onInputChange('email', emailInput)">
+        </nav>
       </div>
-      <span class="error" *ngIf="showErrors && errorStates.privacy">{{ t('contact.errorPrivacy') }}</span>
+
+      <div class="biginput">
+        <nav>
+          <p>
+            <span *ngIf="! (showErrors && errorStates.message)">{{ t('contact.yourMessage') }}</span>
+            <span class="error" *ngIf="showErrors && errorStates.message">{{ t('contact.errorMessage') }}</span>
+          </p>
+          <textarea name="message" autocomplete="off" #messageInput
+            [class.error-border]="showErrors && errorStates.message"
+            (input)="onInputChange('message', messageInput)"></textarea>
+        </nav>
+
+        <div class="privacy-checkbox-wrapper">
+          <input type="checkbox" name="privacy" #privacyCheckbox id="privacyCheck"
+            [class.wrong]="showErrors && errorStates.privacy" (change)="onInputChange('privacy', privacyCheckbox)">
+          <label for="privacyCheck">
+            {{ t('contact.privacy') }} <a [routerLink]="['/legal-notice']" fragment="privacy">{{
+              t('contact.privacyPolicy') }}</a> {{ t('contact.privacyAgree') }}
+          </label>
+        </div>
+        <span class="error" *ngIf="showErrors && errorStates.privacy">{{ t('contact.errorPrivacy') }}</span>
+      </div>
+
+      <button style="font-size: 16px;" type="button"
+        (click)="onSubmit(contactForm, nameInput, emailInput, messageInput, privacyCheckbox)"
+        [class.active]="isFormValid(nameInput, emailInput, messageInput, privacyCheckbox)"
+        [class.inactive]="!isFormValid(nameInput, emailInput, messageInput, privacyCheckbox)">{{ t('contact.send')
+        }}</button>
+    </form>
+
+    <div class="success-toast" *ngIf="showSuccessMessage">
+      {{ t('contact.successMessage') }}
     </div>
-
-    <button style="font-size: 16px;" type="button" (click)="onSubmit(contactForm, nameInput, emailInput, messageInput, privacyCheckbox)" [class.active]="isFormValid(nameInput, emailInput, messageInput, privacyCheckbox)" [class.inactive]="!isFormValid(nameInput, emailInput, messageInput, privacyCheckbox)">{{ t('contact.send') }}</button>
-  </form>
-
-  <div class="success-toast" *ngIf="showSuccessMessage">
-    {{ t('contact.successMessage') }}
-  </div>
-</section>
+  </section>
+</div>

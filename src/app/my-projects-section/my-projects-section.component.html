@@ -1,67 +1,72 @@
-<h2 id="my-projects">{{ t('projects.title') }}</h2>
-<div class="projects-section">
+<div data-aos="fade-left">
+  <h2 id="my-projects">{{ t('projects.title') }}</h2>
+  <div class="projects-section">
 
-  <!-- Projekt-Navigation -->
-  <div class="project-nav">
-    <button style="font-size: 24px;" class="button-design" *ngFor="let project of projects; let i = index" (click)="activeProjectIndex = i"
-      [class.active]="activeProjectIndex === i">
-      {{ project.title }}
-    </button>
-  </div>
+    <!-- Projekt-Navigation -->
+    <div class="project-nav">
+      <button style="font-size: 24px;" class="button-design" *ngFor="let project of projects; let i = index"
+        (click)="activeProjectIndex = i" [class.active]="activeProjectIndex === i">
+        {{ project.title }}
+      </button>
+    </div>
 
-  <!-- Projekt-Details -->
-  <div class="project-details" *ngIf="projects[activeProjectIndex]">
-    <div class="project-details-content">
-      <div class="project-content">
-        <div class="project-info">
-          <div class="project-header">
-            <h3>{{ projects[activeProjectIndex].title }}</h3>
-            <span class="duration">{{ t(projects[activeProjectIndex].durationKey) }}</span>
-          </div>
-
-          <div style="display: flex; align-items: center; gap: 8px;">
-            <img src="assets/img/elipse.png" alt="Stichpunkt" class="bullet-icon" style="width: 18px; height: 18px;" />
-            <h4 style="margin: 0;">{{ t('projects.about') }}</h4>
-          </div>
-          <p class="description">{{ t(projects[activeProjectIndex].descriptionKey) }}</p>
-
-          <div style="display: flex; align-items: center; gap: 8px;">
-            <img src="assets/img/elipse.png" alt="Stichpunkt" class="bullet-icon" style="width: 18px; height: 18px;" />
-            <h4 style="margin: 0;">{{ t('projects.process') }}</h4>
-          </div>
-          <p class="description">{{ t(projects[activeProjectIndex].processKey) }}</p>
-
-          <div style="display: flex; align-items: center; gap: 8px;">
-            <img src="assets/img/elipse.png" alt="Stichpunkt" class="bullet-icon" style="width: 18px; height: 18px;" />
-            <h4 style="margin: 0;">{{ t('projects.learned') }}</h4>
-          </div>
-          <p class="description">{{ t(projects[activeProjectIndex].learnedKey) }}</p>
-        </div>
-        <div class="project-right">
-          <div class="tech-stack">
-            <span>{{ t('projects.technologies') }}</span>
-            <div class="tech-icons">
-              <img *ngFor="let tech of projects[activeProjectIndex].tech" [src]="tech.img" [alt]="tech.name"
-                [title]="tech.name">
+    <!-- Projekt-Details -->
+    <div class="project-details" *ngIf="projects[activeProjectIndex]">
+      <div class="project-details-content">
+        <div class="project-content">
+          <div class="project-info">
+            <div class="project-header">
+              <h3>{{ projects[activeProjectIndex].title }}</h3>
+              <span class="duration">{{ t(projects[activeProjectIndex].durationKey) }}</span>
             </div>
+
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <img src="assets/img/elipse.png" alt="Stichpunkt" class="bullet-icon"
+                style="width: 18px; height: 18px;" />
+              <h4 style="margin: 0;">{{ t('projects.about') }}</h4>
+            </div>
+            <p class="description">{{ t(projects[activeProjectIndex].descriptionKey) }}</p>
+
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <img src="assets/img/elipse.png" alt="Stichpunkt" class="bullet-icon"
+                style="width: 18px; height: 18px;" />
+              <h4 style="margin: 0;">{{ t('projects.process') }}</h4>
+            </div>
+            <p class="description">{{ t(projects[activeProjectIndex].processKey) }}</p>
+
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <img src="assets/img/elipse.png" alt="Stichpunkt" class="bullet-icon"
+                style="width: 18px; height: 18px;" />
+              <h4 style="margin: 0;">{{ t('projects.learned') }}</h4>
+            </div>
+            <p class="description">{{ t(projects[activeProjectIndex].learnedKey) }}</p>
           </div>
-          <div class="project-image">
-            <img [src]="projects[activeProjectIndex].img" [alt]="projects[activeProjectIndex].title">
-          </div>
-          <div class="project-links">
-            <a class="livetestbtn" [href]="projects[activeProjectIndex].liveTestLink" target="_blank">
-              {{ t('projects.liveTest') }}
-            </a>
-            <ng-container *ngIf="projects[activeProjectIndex].githubLink">
-              <a [href]="projects[activeProjectIndex].githubLink" target="_blank">
-                GitHub
+          <div class="project-right">
+            <div class="tech-stack">
+              <span>{{ t('projects.technologies') }}</span>
+              <div class="tech-icons">
+                <img *ngFor="let tech of projects[activeProjectIndex].tech" [src]="tech.img" [alt]="tech.name"
+                  [title]="tech.name">
+              </div>
+            </div>
+            <div class="project-image">
+              <img [src]="projects[activeProjectIndex].img" [alt]="projects[activeProjectIndex].title">
+            </div>
+            <div class="project-links">
+              <a class="livetestbtn" [href]="projects[activeProjectIndex].liveTestLink" target="_blank">
+                {{ t('projects.liveTest') }}
               </a>
-            </ng-container>
-           
+              <ng-container *ngIf="projects[activeProjectIndex].githubLink">
+                <a [href]="projects[activeProjectIndex].githubLink" target="_blank">
+                  GitHub
+                </a>
+              </ng-container>
+
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
+  </div>
 </div>
