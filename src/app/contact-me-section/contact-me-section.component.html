@@ -58,8 +58,12 @@
             {{ t('contact.privacy') }} <a [routerLink]="['/legal-notice']" fragment="privacy">{{
               t('contact.privacyPolicy') }}</a> {{ t('contact.privacyAgree') }}
           </label>
-        </div>
-        <span class="error" *ngIf="showErrors && errorStates.privacy">{{ t('contact.errorPrivacy') }}</span>
+          </div>
+          <span class="error privacy-error-fixed"
+            [class.visible]="showErrors && errorStates.privacy"
+            [class.invisible]="!(showErrors && errorStates.privacy)">
+            {{ t('contact.errorPrivacy') }}
+          </span>
       </div>
 
       <button style="font-size: 16px;" type="button"

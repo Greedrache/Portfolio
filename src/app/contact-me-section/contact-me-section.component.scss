@@ -38,11 +38,21 @@
 
 .contact-info {
     width: 50%;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    flex-wrap: wrap;
 }
+
+.privacy-error-fixed {
+    min-height: 1.5em;
+    display: block;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+.privacy-error-fixed.visible {
+    opacity: 1;
+}
+.privacy-error-fixed.invisible {
+    opacity: 0;
+}
+
 
 .email-line,
 .tel-line {
