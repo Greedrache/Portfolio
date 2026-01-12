@@ -75,7 +75,7 @@ export class ContactMeSectionComponent {
         message: messageInput.value
       };
 
-      fetch('/api/send-mail', {
+      fetch('assets/php/send-mail.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
