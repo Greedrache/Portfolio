@@ -103,7 +103,7 @@ section {
     margin: 0 auto;
     padding-top: 0;
     min-height: 100vh;
-    align-items: flex-end;
+    align-items: center;
 }
 
 /* Fester Abstand zum Header */
@@ -397,4 +397,10 @@ section {
             width: 25px;
         }
     }
+}
+
+@media (min-width: 1900px) {
+  .row {
+    min-height: 700px;
+  }
 }
