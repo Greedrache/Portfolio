@@ -16,9 +16,26 @@
 
     <div class="mobile-menu" [class.open]="menuOpen">
         <button class="close-menu" (click)="toggleMenu()">&times;</button>
-        <a href="https://github.com/Greedrache" target="_blank" (click)="toggleMenu()"><img src="assets/img/Github button-light.png" alt="My Github"> GitHub</a>
-        <a href="mailto:thieletim15@gmail.com" (click)="toggleMenu()"><img src="assets/img/Mail-light.png" alt="My Email"> Email</a>
-        <a href="https://www.linkedin.com/in/tim-thiele-390aa92aa/?trk=opento_sprofile_goalscard" target="_blank" (click)="toggleMenu()"><img src="assets/img/linkin-light.png" alt="My LinkedIn"> LinkedIn</a>
+
+        <div class="nav-links">
+            <a href="#why-me" (click)="toggleMenu()">{{ t('nav.whyMe') }}</a>
+            <a href="#skills" (click)="toggleMenu()">{{ t('nav.skills') }}</a>
+            <a href="#my-projects" (click)="toggleMenu()">{{ t('nav.projects') }}</a>
+            <a href="#contacts" (click)="toggleMenu()">{{ t('nav.contact') }}</a>
+        </div>
+
+        <div class="social-links">
+            <a href="https://github.com/Greedrache" target="_blank" (click)="toggleMenu()" aria-label="GitHub">
+                <img src="assets/img/Github button-light.png" alt="GitHub">
+            </a>
+            <a href="mailto:thieletim15@gmail.com" (click)="toggleMenu()" aria-label="Email">
+                <img src="assets/img/Mail-light.png" alt="Email">
+            </a>
+            <a href="https://www.linkedin.com/in/tim-thiele-390aa92aa/?trk=opento_sprofile_goalscard" target="_blank" (click)="toggleMenu()" aria-label="LinkedIn">
+                <img src="assets/img/linkin-light.png" alt="LinkedIn">
+            </a>
+        </div>
+
         <div class="language-buttons">
             <button class="lang-btn" [class.active]="currentLang === 'en'" (click)="setLanguage('en')">EN</button>
             <button class="lang-btn" [class.active]="currentLang === 'de'" (click)="setLanguage('de')">DE</button>

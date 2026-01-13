@@ -12,14 +12,11 @@ import { TranslationService, Language } from '../services/translation.service';
 })
 export class HeaderComponent {
   currentLang: Language = 'en';
-
-
   constructor(public translationService: TranslationService, private router: Router) {
     this.translationService.currentLang$.subscribe(lang => {
       this.currentLang = lang;
     });
   }
-
   isOnLegalNoticePage(): boolean {
     return this.router.url.startsWith('/legal-notice');
   }

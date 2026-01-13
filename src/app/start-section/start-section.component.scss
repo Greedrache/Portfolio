@@ -208,21 +208,22 @@ section {
 
 // Mobile Menu Overlay
 .mobile-menu {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(38, 46, 52, 0.98);
-    z-index: 2000;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(38, 46, 52, 0.98);
+        z-index: 2000;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding: 40px 20px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.25s cubic-bezier(.2,.8,.2,1);
 
     &.open {
         opacity: 1;
@@ -244,42 +245,76 @@ section {
             color: white;
         }
     }
-
-    a {
+    
+    .nav-links {
         display: flex;
-        align-items: center;
-        gap: 15px;
-        color: white;
-        text-decoration: none;
-        font-size: 24px;
-        font-family: 'Josefin Sans', sans-serif;
-        transition: color 0.3s;
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+        max-width: 360px;
 
-        img {
-            width: 30px;
-            height: auto;
-        }
-
-        &:hover {
+        a {
+            display: block;
             color: #89bcd9;
+            text-decoration: none;
+            font-size: 24px;
+            font-family: 'Josefin Sans', sans-serif;
+            padding: 10px 14px;
+            border-radius: 10px;
+            text-align: center;
+            transition: background 0.15s, color 0.15s;
+
+            &:hover {
+                background: #89bcd9;
+                color: #262e34;
+            }
+        }
+    }
+
+    .social-links {
+        display: flex;
+        flex-direction: row;
+        gap: 18px;
+        align-items: center;
+        justify-content: center;
+
+        a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 8px;
+            background: transparent;
+            text-decoration: none;
+
+            img {
+                width: 28px;
+                height: auto;
+                display: block;
+            }
+
+            &:hover {
+                background: rgba(137,188,217,0.12);
+            }
         }
     }
 
     .language-buttons {
         display: flex;
-        gap: 15px;
-        margin-top: 10px;
+        gap: 12px;
+        margin-top: 6px;
 
         .lang-btn {
             background: transparent;
             border: 2px solid #89bcd9;
             color: #89bcd9;
-            padding: 10px 25px;
-            font-size: 18px;
+            padding: 8px 18px;
+            font-size: 16px;
             font-family: 'Josefin Sans', sans-serif;
             border-radius: 20px;
             cursor: pointer;
-            transition: all 0.1s ease;
+            transition: all 0.12s ease;
 
             &:hover {
                 background-color: #89bcd9;
