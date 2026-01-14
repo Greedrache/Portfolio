@@ -71,7 +71,6 @@
         [class.active]="isFormValid(nameInput, emailInput, messageInput, privacyCheckbox)"
         [class.inactive]="!isFormValid(nameInput, emailInput, messageInput, privacyCheckbox)">{{ t('contact.send')
         }}</button>
-      <div class="submit-debug" *ngIf="lastSubmitMessage">{{ lastSubmitMessage }}</div>
     </form>
 
     <div class="success-toast" *ngIf="showSuccessMessage">

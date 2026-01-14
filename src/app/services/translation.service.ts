@@ -113,11 +113,13 @@ export class TranslationService {
     'contact.privacyPolicy': { en: 'privacy policy', de: 'Datenschutzerklärung' },
     'contact.privacyAgree': { en: 'and agree to the processing of my data as outlined.', de: 'gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.' },
     'contact.send': { en: 'Send', de: 'Senden' },
+    'contact.sending': { en: 'Email was sent successfully', de: 'Email wurde erfolgreich versendet' },
     'contact.errorNameShort': { en: 'Name must be at least 3 characters', de: 'Name muss mindestens 3 Zeichen lang sein' },
     'contact.errorEmail': { en: 'Please enter a valid email', de: 'Bitte gib eine gültige E-Mail ein' },
     'contact.errorMessage': { en: 'Message must be at least 10 characters', de: 'Nachricht muss mindestens 10 Zeichen lang sein' },
     'contact.errorPrivacy': { en: 'You must agree to the privacy policy', de: 'Du musst der Datenschutzerklärung zustimmen' },
     'contact.successMessage': { en: 'Thank you! I will get back to you soon.', de: 'Vielen Dank! Ich melde mich bald bei Ihnen.' },
+    'contact.validationFailed': { en: 'Validation failed', de: 'Validierung fehlgeschlagen' },
 
     // Footer
     'footer.legalNotice': { en: 'Legal Notice', de: 'Impressum' },
