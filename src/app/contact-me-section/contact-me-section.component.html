@@ -23,32 +23,32 @@
       <div class="smallinputs">
         <nav>
           <p>
-            <span *ngIf="! (showErrors && errorStates.name)">{{ t('contact.yourName') }}</span>
-            <span class="error" *ngIf="showErrors && errorStates.name">{{ t('contact.errorNameShort') }}</span>
+            <span *ngIf="! ((showErrors && errorStates.name) || (touchedStates.name && errorStates.name))">{{ t('contact.yourName') }}</span>
+            <span class="error" *ngIf="(showErrors && errorStates.name) || (touchedStates.name && errorStates.name)">{{ t('contact.errorNameShort') }}</span>
           </p>
           <input type="text" autocomplete="off" name="name" #nameInput
-            [class.error-border]="showErrors && errorStates.name" (input)="onInputChange('name', nameInput)">
+            [class.error-border]="(showErrors && errorStates.name) || (touchedStates.name && errorStates.name)" (input)="onInputChange('name', nameInput)" (focus)="onInputChange('name', nameInput)">
         </nav>
 
         <nav>
           <p>
-            <span *ngIf="! (showErrors && errorStates.email)">{{ t('contact.yourEmail') }}</span>
-            <span class="error" *ngIf="showErrors && errorStates.email">{{ t('contact.errorEmail') }}</span>
+            <span *ngIf="! ((showErrors && errorStates.email) || (touchedStates.email && errorStates.email))">{{ t('contact.yourEmail') }}</span>
+            <span class="error" *ngIf="(showErrors && errorStates.email) || (touchedStates.email && errorStates.email)">{{ t('contact.errorEmail') }}</span>
           </p>
           <input type="email" autocomplete="off" name="email" #emailInput
-            [class.error-border]="showErrors && errorStates.email" (input)="onInputChange('email', emailInput)">
+            [class.error-border]="(showErrors && errorStates.email) || (touchedStates.email && errorStates.email)" (input)="onInputChange('email', emailInput)" (focus)="onInputChange('email', emailInput)">
         </nav>
       </div>
 
       <div class="biginput">
         <nav>
           <p>
-            <span *ngIf="! (showErrors && errorStates.message)">{{ t('contact.yourMessage') }}</span>
-            <span class="error" *ngIf="showErrors && errorStates.message">{{ t('contact.errorMessage') }}</span>
+            <span *ngIf="! ((showErrors && errorStates.message) || (touchedStates.message && errorStates.message))">{{ t('contact.yourMessage') }}</span>
+            <span class="error" *ngIf="(showErrors && errorStates.message) || (touchedStates.message && errorStates.message)">{{ t('contact.errorMessage') }}</span>
           </p>
           <textarea name="message" autocomplete="off" #messageInput
-            [class.error-border]="showErrors && errorStates.message"
-            (input)="onInputChange('message', messageInput)"></textarea>
+            [class.error-border]="(showErrors && errorStates.message) || (touchedStates.message && errorStates.message)"
+            (input)="onInputChange('message', messageInput)" (focus)="onInputChange('message', messageInput)"></textarea>
         </nav>
 
         <div class="privacy-checkbox-wrapper">
@@ -71,6 +71,7 @@
         [class.active]="isFormValid(nameInput, emailInput, messageInput, privacyCheckbox)"
         [class.inactive]="!isFormValid(nameInput, emailInput, messageInput, privacyCheckbox)">{{ t('contact.send')
         }}</button>
+      <div class="submit-debug" *ngIf="lastSubmitMessage">{{ lastSubmitMessage }}</div>
     </form>
 
     <div class="success-toast" *ngIf="showSuccessMessage">
