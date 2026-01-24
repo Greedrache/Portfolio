@@ -38,6 +38,9 @@
 
 .contact-info {
     width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 .privacy-error-fixed {
@@ -61,12 +64,29 @@
     gap: 10px;
     flex-wrap: nowrap;
     min-width: 0;
+    white-space: nowrap;
+    overflow-wrap: normal;
+    word-break: keep-all;
 }
 
 .email-line img,
 .tel-line img {
     flex-shrink: 0;
 }
+
+.email-line .value,
+.tel-line .value {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 0 1 auto;
+    min-width: 0;
+    color: white;
+}
+
+/* .label styles intentionally left to inherit site defaults —
+   only the media query hides labels at small widths. */
 
 .email-tel-div {
     margin-bottom: 60px;
@@ -365,5 +385,23 @@ button {
     .input-section {
         margin-left: 15px;
         margin-right: 15px;
+    }
+}
+
+/* <=380px: hide textual labels, keep icon + value centered */
+@media (max-width: 380px) {
+    .email-line .label,
+    .tel-line .label {
+        display: none;
+    }
+
+    .email-line,
+    .tel-line {
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .icons {
+        margin-left: 0;
     }
 }
